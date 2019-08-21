@@ -1,0 +1,22 @@
+.header {
+  text-align: center;
+}
+
+.product {
+  width: 300px;
+  height: 250px;
+}
+
+.catalogImg {
+  height: 50%;
+  width: 50%;
+}
+
+.productImg {
+  height: 15%;
+  width: 15%;
+}
+
+.indent{
+  margin-top: 5px;
+}
