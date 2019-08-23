@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>ДЗ1 по JS</title>
+   <script>
+      // Задание 1
+      console.log('Ответ 1:');
+      console.log('код даёт именно такие результаты, из за особенностей постфиксной и префиксной записии опратора ++');
+
+      // Задание 2
+      console.log('\nОтвет 2:');
+      var a = 2;
+      var x = 1 + (a *= 2);
+      console.log('x = ' + x);
+
+      // Задание 3
+      function func3(a, b){
+         a = Number(a);
+         b = Number(b);
+         if (a >= 0 && b >= 0) {
+            alert('a - b = ' + (a - b));
+         } else if (a < 0 && b < 0) {
+            alert('a * b = ' + (a * b));
+         } else {
+            alert('a + b = ' + (a + b));
+         }
+      }
+
+      // Задание 4
+      function func4(a, b){
+         a = Number(a);
+         var
+            result = '';
+
+         switch (a) {
+            case 0:
+               result = result + a++ + ', ';
+            case 1:
+               result = result + a++ + ', ';
+            case 2:
+               result = result + a++ + ', ';
+            case 3:
+               result = result + a++ + ', ';
+            case 4:
+               result = result + a++ + ', ';
+            case 5:
+               result = result + a++ + ', ';
+            case 6:
+               result = result + a++ + ', ';
+            case 7:
+               result = result + a++ + ', ';
+            case 8:
+               result = result + a++ + ', ';
+            case 9:
+               result = result + a++ + ', ';
+            case 10:
+               result = result + a++ + ', ';
+            case 11:
+               result = result + a++ + ', ';
+            case 12:
+               result = result + a++ + ', ';
+            case 13:
+               result = result + a++ + ', ';
+            case 14:
+               result = result + a++ + ', ';
+            case 15:
+               result = result + a++;
+         }
+         alert(result);
+      }
+
+      // Задание 5
+      function plus(a, b){
+         return a + b;
+      }
+
+      function minus(a, b){
+         return a - b;
+      }
+
+      function mult(a, b){
+         return a * b;
+      }
+
+      function div(a, b){
+         return a / b;
+      }
+
+      // а можно так без switch
+      function getValue(sign, a, b){
+         return eval(a + sign + b);
+      }
+
+      // Задание 6
+      function func6(sign, a, b){
+         a = Number(a);
+         b = Number(b);
+
+         var
+            result = '';
+
+         switch (sign) {
+            case '+':
+               result = plus(a, b);
+               break;
+            case '-':
+               result = minus(a, b);
+               break;
+            case '*':
+               result = mult(a, b);
+               break;
+            case '/':
+               result = div(a, b);
+               break;
+         }
+
+         alert(result);
+      }
+
+
+      // Задание 8
+      function power(val, pow){
+         val = Number(val);
+         pow = Number(pow);
+
+         var result = 1;
+         result = powerRecurs(val, pow, result);
+
+         alert(result);
+      }
+
+      // рекурсивная функция
+      function powerRecurs(val, pow, result) {
+         if (pow >= 1) {
+            result = result * val;
+            return powerRecurs(val, pow - 1, result)
+         }
+
+         return result;
+      }
+
+   </script>
+</head>
+<body>
+<div>
+   <p>
+   Задание 1 <br>
+   Код даёт именно такие результаты, из за особенностей постфиксной и префиксной записии опратора ++
+   </p>
+   <p>
+
+   Задание 2 <br>
+   x = 5
+   </p>
+
+   Задание 3 <br>
+   <form>
+      <input type="text" name="a" placeholder="введите значение a">
+      <input type="text" name="b" placeholder="введите значение b">
+      <input type="button" onclick="func3(a.value, b.value)" value="Расчитать">
+   </form>
+   <br>
+
+   Задание 4 <br>
+   <form>
+      <input type="text" name="a" placeholder="введите значение a">
+      <input type="button" onclick="func4(a.value)" value="Расчитать">
+   </form>
+   <br>
+
+   Задание 5-6 <br>
+   <form>
+      <input type="text" name="a" placeholder="введите значение a">
+      <select name="sign">
+         <option value="+">+</option>
+         <option value="-">-</option>
+         <option value="*">*</option>
+         <option value="/">/</option>
+      </select>
+      <input type="text" name="b" placeholder="введите значение b">
+      <input type="button" onclick="func6(sign.value, a.value, b.value)" value="Расчитать">
+   </form>
+   <br>
+
+   Задание 8 <br>
+   <form>
+      <input type="text" name="a" placeholder="введите число">
+      <input type="text" name="b" placeholder="введите степень">
+      <input type="button" onclick="power(a.value, b.value)" value="Расчитать">
+   </form>
+
+</div>
+</body>
+</html>
