@@ -1,0 +1,79 @@
+@font-face {
+    font-family: "My AmadeusAP";
+    src: url("fonts/WCManoNegraBta.otf");
+}
+
+body {
+   background: #f8f8f8;
+   margin: 10px;
+}
+
+.mark_menu {
+   list-style-type: none;
+   padding-left: 20px;
+}
+
+.mark_menu a {
+   text-decoration: none;
+   font-weight: bold;
+   font-size: 20px;
+   color: #9aa1a9;
+}
+
+.mark_menu li {
+   padding-bottom: 4px;
+}
+
+.header {
+   color: black;
+   font-size: 18px;
+   font-weight: 400;
+   background: #eaeaea;
+}
+
+.short_explain {
+   color: #707070;
+   font-size: 14px;
+   font-style: italic;
+   line-height: 16px;
+}
+
+.big_explain {
+   color: #484343;
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 24px;
+   text-align: left;
+}
+
+.mark_main {
+   color: #484343;
+   font-size: 16px;
+   list-style-image: url(images/brush.png);
+}
+
+.mark_main p {
+   text-decoration: underline;
+}
+
+.photo_product {
+    border: 10px solid #c8a18f;
+}
+
+.epigraf {
+   color: #707070;
+   font-family: "My AmadeusAP", serif;
+   font-size: 20px;
+}
+
+.input_style, .textarea_style {
+   color: #9188a9;
+   font-weight: 600;
+   font-size: 14px;
+}
+
+.input_style {
+   width: 459px;
+   height: 24px;
+   margin-top: 4px;
+}
