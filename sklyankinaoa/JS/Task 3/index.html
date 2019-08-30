@@ -6,19 +6,16 @@
    <script>
       //1) С помощью цикла while вывести все простые числа в промежутке от 0 до 100
       console.log( "Задание 1:" );
-      let arrtrue = [],
-          arrfalse = [],
-          inarr = 0;
+      let arr = [],
+          inarr = 2;
       while( inarr<=100 ){
-         if( inarr==0 || inarr==1 || (inarr>2 && inarr%2==0) || (inarr>3 && inarr%3==0) || (inarr>4 && inarr%4==0) || (inarr>5 && inarr%5==0) || (inarr>6 && inarr%6==0) || (inarr>7 && inarr%7==0) || (inarr>8 && inarr%8==0) || (inarr>9 && inarr%9==0) ) {
-            arrfalse.push( inarr );
-         } else {
-            arrtrue.push( inarr );
+         if( !( (inarr>2 && inarr%2==0) || (inarr>3 && inarr%3==0) || (inarr>5 && inarr%5==0) || (inarr>7 && inarr%7==0) || (inarr>11 && inarr%11==0) || (inarr>13 && inarr%13==0) ) ) {
+            arr.push( inarr );
          }
          inarr++;
       }
-      console.log( arrtrue );
-      
+      console.log( arr );
+            
       //2) С помощью цикла do…while написать функцию для вывода чисел от 0 до 10, чтобы результат выглядел так:
       //0 – это ноль
       //1 – нечетное число
