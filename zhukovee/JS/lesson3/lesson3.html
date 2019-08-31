@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>ДЗ1 по JS</title>
+   <script>
+      // Задание 1
+      console.log('\nЗадание 1:');
+      // 2 единственное четное из простых чисел
+      var result = 2 + ', ';
+
+      let i = 3;
+      // дальше пошли по нечетным (т.к. четные делятся на 2, а это уже точно не простое число)
+      while (i <= 100) {
+         // не самый оптимальный алгоритм, но будем искать на что же делится число без остатка
+         // делители тоже берем только нечетные
+         var
+            isSimple = true;
+         for (var j = 3; j < i; j = j + 2) {
+            // если нашли что делится без остатка, то значит простым не является
+            if (i % j === 0) {
+               isSimple = false;
+               break; // выходим из for
+            }
+         }
+         // не простое
+         if (isSimple) {
+            result = result + i + ', ';
+         }
+
+         i = i + 2;
+      }
+      console.log(result);
+
+
+
+      // Задание 2
+      console.log('\nЗадание 2:');
+
+      i = 0;
+      do {
+         if (i==0) {
+            console.log('0 - это ноль');
+         } else if (i % 2 == 0) { // оператор деления не самый быстрый во всех языках, тут можно было сыграть на том что четные и нечетные чередуются решение ниже
+            console.log(i + ' - четное число');
+         } else {
+            console.log(i + ' - нечетное число');
+         }
+         i++;
+      } while (i<=10);
+
+      // Задание 2 - вариант 2
+      console.log('\nЗадание 2 - вариант 2:');
+
+      i = 0;
+      var
+         chet = true;
+      do {
+         if (i==0) {
+            console.log('0 - это ноль');
+         } else if (chet) {
+            console.log(i + ' - четное число');
+         } else {
+            console.log(i + ' - нечетное число');
+         }
+         i++;
+         chet = !chet; // следующее четное будет
+      } while (i<=10);
+
+
+      // Задание 3
+      console.log('\nЗадание 3:');
+      for (var k = 0; k < 10; console.log(k), k++);
+
+      // Задание 3
+      console.log('\nЗадание 3:');
+      for (var k = 0, result = ''; k < 20; result = result + 'x', console.log(result), k++);
+
+   </script>
+</head>
+<body>
+
+
+</body>
+</html>
