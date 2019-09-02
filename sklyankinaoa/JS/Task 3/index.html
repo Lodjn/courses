@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+   <script>
+      //1) С помощью цикла while вывести все простые числа в промежутке от 0 до 100
+      console.log( "Задание 1:" );
+      let arr = [],
+          inarr = 2;
+      while( inarr<=100 ){
+         if( !( (inarr>2 && inarr%2==0) || (inarr>3 && inarr%3==0) || (inarr>5 && inarr%5==0) || (inarr>7 && inarr%7==0) || (inarr>11 && inarr%11==0) || (inarr>13 && inarr%13==0) ) ) {
+            arr.push( inarr );
+         }
+         inarr++;
+      }
+      console.log( arr );
+            
+      //2) С помощью цикла do…while написать функцию для вывода чисел от 0 до 10, чтобы результат выглядел так:
+      //0 – это ноль
+      //1 – нечетное число
+      //2 – четное число
+      //3 – нечетное число
+      //...
+      //10 – четное число
+      console.log( "Задание 2:" );
+      var i = 0;
+      do {
+         if (i===0) {
+            console.log( i + " – это ноль" );
+         } else if (i%2==0) {
+            console.log( i + " – четное число" );
+         } else {
+            console.log( i + " – нечетное число" );
+         }
+         i++;
+      } while (i<=10){
+      }
+      
+      //3) * Вывести с помощью цикла for числа от 0 до 9, НЕ используя тело цикла. То есть выглядеть должно вот так:
+      //
+      //for(…){// здесь пусто}
+      //
+      console.log( "Задание 3:" );
+      for ( var a = 0; a<=9; console.log( a++ ) ){
+      }
+      
+      //4) * Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5:
+      //
+      //x
+      //xx
+      //xxx
+      //xxxx
+      //xxxxx
+      console.log( "Задание 4:" );
+      for (var i = 1; i<=20; i++ ) {
+         var result = "",
+             num = 1;
+         while (num<=i) {
+            result = result + "x";
+            num++;
+         }
+         console.log( result );
+      }
+   </script>
+
+</head>
+<body>
+
+</body>
+</html>
