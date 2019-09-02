@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <title>Урок 3</title>
+   <script>
+      // TASK №1----------------
+      // С помощью цикла while вывести все простые числа в промежутке от 0 до 100
+      console.log('TASK №1. Список простых чисел от 0 до 100:');
+      let i = 2;
+      while (i < 100) {
+         let j = 2;
+         while (j < i) {
+            if (i % j === 0) {
+               break;
+            }
+            j++;
+         }
+         if (i === j) {
+            console.log(i);
+         }
+         i++;
+      }
+      // TASK №2----------------
+      /* С помощью цикла do…while написать функцию для вывода чисел от 0 до 10, чтобы результат выглядел так:
+      0 – это ноль
+      1 – нечетное число
+      2 – четное число
+      3 – нечетное число
+      … */
+      console.log('TASK №2.');
+      i = 0;
+      do {
+         if (i === 0) {
+            console.log('0 – это ноль');
+         } else if (i % 2 === 0) {
+            console.log(i + ' - четное число');
+         } else {
+            console.log(i + ' - нечетное число');
+         }
+         i++;
+      } while (i <= 10);
+      // TASK №3----------------
+      // Вывести с помощью цикла for числа от 0 до 9, НЕ используя тело цикла.
+      console.log('TASK №3.');
+      for (let i = 0; i <= 9; console.log(i++)) {}
+      // TASK №4----------------
+      /* Нарисовать пирамиду с помощью console.log, как показано на рисунке,
+      только у вашей пирамиды должно быть 20 рядов, а не 5:
+      x
+      xx
+      xxx
+      xxxx
+      xxxxx */
+      console.log('TASK №4.');
+      let x = 'x';
+      for (let i = 1; i <= 20; i++) {
+         console.log(x);
+         x += 'x';
+      }
+   </script>
+</head>
+<body>
+</body>
+</html>
