@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="UTF-8">
+      <title>ЛМХ - контакты</title>
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <div class="header">
+         <h2>Лавка молодого художника "Алёна К"</h2>
+         <table>
+            <tr>
+               <td><img src="images/logo.jpg" alt="Логотип" title="Логотип"></td>
+               <td>
+                  <ul>
+                     <li><a href="index.html">Главная</a></li>
+                     <li><a href="catalog.html">Каталог</a></li>
+                     <li><a href="contacts.html">Контакты</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <h1>Контакты</h1>
+      <form action="contacts.html" method="post">
+         <fieldset>
+            <legend>Напишите нам</legend>
+            <label style="padding-right: 8px;" for="username">ФИО</label>
+            <input class="input_style" id="username" name="fio" type="text" placeholder="Фамилия Имя Отчество"><br>
+            <label for="usermail">E-mail</label>
+            <input class="input_style" id="usermail" name="email" type="email" placeholder="myemail@yandex.ru"><br>
+            <label style="padding-right: 11px;" for="usertitle">Тема</label>
+            <input class="input_style" id="usertitle" name="title" type="text"><br>
+            <span>Текст сообщения</span><br>
+            <textarea class="textarea_style" name="text" cols="61" rows="10"></textarea><br>
+            <input type="submit" value="Отправить">
+         </fieldset>
+      </form>
+      <h2>Адрес</h2>
+      <p>
+         <b>Номер телефона:</b> +7(4852)76-76-76<br>
+         <b>Адрес:</b> г. Ярославль, ул. Угличская, д. 34<br>
+         <b>E-mail:</b> email_shop@gmail.com<br>
+         <b>Часы работы:</b> ежедневно с 09:00 до 18:00<br>
+      </p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1068.0136924229598!2d39.84145817029188!3d57.631020661866394!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1566431483898!5m2!1sru!2sru" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <div class="footer">
+         <hr>
+         &copy; <small>Все права защищены</small>
+      </div>
+   </body>
+</html>
