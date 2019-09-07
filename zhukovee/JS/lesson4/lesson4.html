@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>ДЗ по JS</title>
+   <script>
+      // Задание 1
+      console.log('\nЗадание 1:');
+      let
+         workers = {
+         'Иванов': 30000,
+         'Петров': 35000,
+         'Сидоров': 29000,
+         'Васечкин': 40000
+      };
+
+      // максимальная-минимальные ЗП
+      function maxMinPay(obj){
+         let
+            result = {},
+            maxValue = 0,
+            minValue = Infinity;
+         for (let prop in obj) {
+            if (obj.hasOwnProperty(prop)) {
+               if (obj[prop] > maxValue) {
+                  maxValue = obj[prop];
+                  result.max = {name: prop, pay: maxValue};
+               }
+               else if (obj[prop] < minValue) {
+                  minValue = obj[prop];
+                  result.min = {name: prop, pay: minValue};
+               }
+            }
+         }
+         return result;
+      }
+
+      // сумма ЗП
+      function sumPay(obj){
+         let
+            result = 0;
+
+         for (let prop in obj) {
+            if (obj.hasOwnProperty(prop)) {
+               result = result + obj[prop];
+            }
+         }
+         return result;
+      }
+
+      // увеличение ЗП
+      function upPay(obj, proc){
+         let
+            result = 0;
+
+         for (let prop in obj) {
+            if (obj.hasOwnProperty(prop)) {
+               obj[prop] = obj[prop] + obj[prop]/100*proc;
+            }
+         }
+         return result;
+      }
+
+      let
+         result = maxMinPay(workers);
+      console.log('Максимальная ЗП -', result.max.name, ':', result.max.pay);
+      console.log('Минимальная ЗП -', result.min.name, ':', result.min.pay);
+      console.log('Сумма ЗП:', sumPay(workers));
+      // повышение на 10%
+      upPay(workers, 10);
+      console.log('ЗП + 10%', workers);
+
+
+
+      // Задание 2
+      console.log('\nЗадание 2:');
+      let userCount = {
+         count: 0,
+         up: function (){
+            this.count++;
+         },
+         down: function (){
+            this.count--;
+         },
+         showCount: function (){
+            console.log('count:',this.count)
+         }
+      };
+      userCount.up();
+      userCount.up();
+      userCount.down();
+      userCount.showCount();
+
+      // Задание 3
+      console.log('\nЗадание 3: не понял');
+
+      let food = {
+         calc: function(proteins, fats, carbs) {
+
+         }
+      };
+
+      // Задание 4
+      console.log('\nЗадание 4: в консоли выполните функцию IntToObj(значение)');
+      function IntToObj(value) {
+         let
+            result = {};
+
+
+         if (isNaN(value) || value < 0 || value > 999) {
+            console.log('Недопустимое значение');
+            return result;
+         }
+
+         let strValue = String(value);
+
+         // добьем нулями слева
+         strValue = '000'.substr(0, 3 - strValue.length) + strValue;
+         result['сотни'] = strValue[0];
+         result['десятки'] = strValue[1];
+         result['единицы'] = strValue[2];
+
+         return result;
+      }
+
+
+   </script>
+</head>
+<body>
+
+
+</body>
+</html>
