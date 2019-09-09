@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <title>Урок 4</title>
+   <script>
+      // TASK №1----------------
+      /* Создайте объект с 4 людьми, ключ объекта будет имя человека, значение это его зарплата
+      (значения могут быть произвольные)
+      Вывести в консоль, пользователя с максимальной и минимальной зарплатой
+      Вывести в консоль сумму всех зарплат.
+      Создать функцию, которая увеличивает зарплату каждого человека на 10% */
+      console.log('TASK №1.');
+      let objSalary = {
+         Helena: 75000,
+         Alex: 123456,
+         Mary: 30003,
+         Katy: 31000,
+         Olga: 123456,
+         countMaxSalary: function () {
+            let
+               maxSalary = 0,
+               arrMax = [];
+            for (let person in this) {
+               if (this.hasOwnProperty(person) && typeof this[person] === 'number') {
+                  if (this[person] > maxSalary) {
+                     arrMax = [];
+                     maxSalary = this[person];
+                     arrMax.push(person);
+                  } else if (this[person] === maxSalary) {
+                     arrMax.push(person);
+                  }
+               }
+            }
+            console.log('Максимальная зарплата (' + maxSalary + ') у ' + arrMax);
+            return maxSalary;
+         },
+         countMinSalary: function (valueMax) {
+            let
+               minSalary = valueMax,
+               arrMin = [];
+            for (let person in this) {
+               if (this.hasOwnProperty(person) && typeof this[person] === 'number') {
+                  if (this[person] < minSalary) {
+                     arrMin = [];
+                     minSalary = this[person];
+                     arrMin.push(person);
+                  } else if (this[person] === minSalary) {
+                     arrMin.push(person);
+                  }
+               }
+            }
+            console.log('Минимальная зарплата (' + minSalary + ') у ' + arrMin);
+         },
+         countAllSalary: function () {
+            let allSalary = 0;
+            for (let person in this) {
+               if (this.hasOwnProperty(person) && typeof this[person] === 'number') allSalary += this[person];
+            }
+            console.log('Суммма всех зарплат: ' + allSalary);
+         },
+         upSalary: function () {
+            let objNewSalary = {};
+            for (let person in this) {
+               if (this.hasOwnProperty(person) && typeof this[person] === 'number') {
+                  objNewSalary[person] = Math.round(this[person] + this[person] * 10 / 100);
+               }
+            }
+            console.log('Зарплата, увеличенная на 10%: ');
+            console.log(objNewSalary);
+         }
+      };
+      console.log(objSalary);
+      objSalary.countMinSalary(objSalary.countMaxSalary());
+      objSalary.countAllSalary();
+      objSalary.upSalary();
+      // TASK №2----------------
+      /* Создать объект userCount c 4 ключами
+      (count - счетчик правильных ответов, up если ответ верный, должен увеличить значение count на единицу,
+      down если ответ не верный, должен уменьшить значение count на единицу, showCount вывод результата в консоль)
+      userCount.up(); userCount.up(); userCount.down(); userCount.showCount(); */
+      console.log('TASK №2.');
+      let userCount = {
+         count: 0,
+         up: function () {
+            this.count++;
+         },
+         down: function () {
+            this.count--;
+         },
+         showCount: function () {
+            console.log(this.count);
+         }
+      };
+      userCount.up();
+      userCount.up();
+      userCount.down();
+      userCount.showCount();
+   </script>
+</head>
+<body>
+   <ul>
+      <li>Результаты заданий № 1 и № 2 смотреть в консоли.</li>
+      <li><a href="task3.html">Задание № 3</a></li>
+      <li><a href="task4.html">Задание № 4</a></li>
+      <li><a href="task5.html">Задание № 5</a></li>
+   </ul>
+</body>
+</html>
