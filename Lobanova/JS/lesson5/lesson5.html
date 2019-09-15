@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Домашнее задание JS № 5</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+</head>
+
+<body>
+    <div>Задание 1. Необходимо при нажатии на кнопку поменять текст кнопки на Привет</div>
+    <div>
+        <input type="button" value="Eng -> Ru" onclick="document.getElementById('loc').innerText = 'Привет'"></input>
+        <p id='loc'>Hello</p>
+    </div>
+    <div>Задание 2. Необходимо при нажатии на кнопку поменять тэг на &lt;h3&gt;&lt;/h3&gt;</div>
+    <div>
+        <input type="button" value="b -> h3" onclick="document.getElementById('tag').innerHTML = '<h3>Привет</h3>'"></input>
+        <b id='tag'>Hello</b>
+    </div>
+    <div>Задание 3. Поменяйте содержимое списка на текс list их порядковый номер в коде.</div>
+    <div class="menu">
+        <h2>Заголовок.</h2>
+        <ul class="list">
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+        </ul>
+        <input type="button" value="Изменить содержимое" onclick="changeText()"></input>
+    </div>
+    <div>Задание 4. Калькулятор</div>
+    <div>
+        <input placeholder="Введите число" id="num1" type="text"> <span>?</span> <input placeholder="Введите число" id="num2" type="text"> = <span id="res">результат</span>
+    </div>
+    <button onclick="calc('1')">+</button>
+    <button onclick="calc('2')">-</button>
+    <button onclick="calc('3')">*</button>
+    <button onclick="calc('4')">/</button>
+    <div>Задание 5. Вставьте перед элементом #list новую li с текстом 'Первый элемент списка'</div>
+    <ul id='menu'>
+        <li id="list">Элемент списка из HTML</li>
+    </ul>
+    <input type="button" value="Добавить 1-ый элемент списка" onclick="addItem()"></input>
+    <div>Задание 6. Создать просто доску 8 на 8, в которой будут черные и белые ячейки</div>
+    <input class='task6' type="button" value="Нарисовать доску" onclick="drawChess()"></input>
+    <table id='chess'>
+    </table>
+</body>
+
+</html>
