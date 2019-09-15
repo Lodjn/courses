@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+   <script>
+      //   1) Дан код. Почему код даёт именно такие результаты?:
+      //
+      console.log( "Задание 1:");
+      let a = 1, b = 1, c, d;
+      c = ++a;
+      console.log("c = ++a равно " + c + ", в префиксной форме инкрементирование производится сразу, а возврат — уже с обновленным значением, а = 2");
+      d = b++;
+      console.log("d = b++ равно " + d + ", в постфиксной форме сначала происходит возвращение значения, а потом выполняется инкрементирование, b = 2");
+      c = (2+ ++a);
+      console.log("c = (2+ ++a) равно " + c + ", к 2 прибавляется значение a, которое предварительно увеличили на 1, т.е. 2+(2+1) = 5, a равно 3");
+      d = (2+ b++);
+      console.log("d = (2+ b++) равно " + d + ", к 2 прибавляется значение b, которое потом увеличили на 1, т.е. d=2+2 = 4, b равно 3");
+      console.log("a = " + a); // 3
+      console.log("b = " + b); // 3
+
+      //   2) Чему будет равен x в примере ниже?
+      //
+      let f = 2,
+          x = 1 + (f *= 2);
+      console.log( "Задание 2: результат ( 1 + (f *= 2) ) = 1 + ( 2 * 2 ) = " + x ); //результат 5 = 1 + ( 2 * 2 )
+
+      //  3) Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. Затем написать скрипт, который работает по следующему принципу:
+      //   если a и b положительные, вывести их разность;
+      //   если а и b отрицательные, вывести их произведение;
+      //   если а и b разных знаков, вывести их сумму;
+      //   ноль можно считать положительным числом.
+      console.log( "Задание 3:");
+      function alertRes(y,z) {
+         if(y>=0 && z>=0){
+            console.log( "разность равна " + (y-z) );
+         }
+         else if(y<0 && z<0){
+             console.log( "произведение равно " + (y*z) );
+         }
+         else if((y<0 && z>=0)||(y>=0 && z<0)){
+             console.log( "сумма равна " + (y+z) );
+         }
+       }
+      // Для задания переменных, которые может вводить сам пользователь, можно использовать prompt("Введите первое значение")
+      // let y1 = parseInt( prompt("Введите первое число") ),
+      //     z1 = parseInt( prompt("Введите второе число") );
+      // alertRes(y1,z1);
+
+      // Для сравнения известных значений:
+      alertRes(15,5);
+      alertRes(15,-5);
+      alertRes(-5,5);
+      alertRes(-5,-3);
+      alertRes(-1,0);
+
+      //  4) Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.
+      console.log( "Задание 4:");
+      let val = +prompt("Введите число в промежутке [0..15]");
+      switch (val) {
+         case 0:
+            console.log(0);
+         case 1:
+            console.log(1);
+         case 2:
+            console.log(2);
+         case 3:
+            console.log(3);
+         case 4:
+            console.log(4);
+         case 5:
+            console.log(5);
+         case 6:
+            console.log(6);
+         case 7:
+            console.log(7);
+         case 8:
+            console.log(8);
+         case 9:
+            console.log(9);
+         case 10:
+            console.log(10);
+         case 11:
+            console.log(11);
+         case 12:
+            console.log(12);
+         case 13:
+            console.log(13);
+         case 14:
+            console.log(14);
+         case 15:
+            console.log(15);
+      }
+
+      //  5) Реализовать основные 4 арифметические операции в виде функций с двумя параметрами.
+      //  Обязательно использовать оператор return.
+      function sumNum(a,b) {
+         return a + b;
+      }
+
+      function diffNum(a,b) {
+         return a - b;
+      }
+
+      function multiplNum(a,b) {
+         return a * b;
+      }
+
+      function dividedNum(a,b) {
+            return a/b;
+      }
+      // console.log( sumNum(1,2) );
+      // console.log( diffNum(1,2) );
+      // console.log( multiplNum(1,2) );
+      console.log( "Задание 5:" + dividedNum(1,2) );
+
+      //  6) Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+      //  где arg1, arg2 – значения аргументов, operation – строка с названием операции.
+      //  В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 3)
+      //  и вернуть полученное значение (использовать switch).
+      function mathOperation(arg1, arg2, operation) {
+         let result = "";
+         switch (operation) {
+            case "сложить":
+               result = sumNum(arg1,arg2);
+               break;
+            case "вычесть":
+               result = diffNum(arg1,arg2);
+               break;
+            case "умножить":
+               result = multiplNum(arg1,arg2);
+               break;
+            case "разделить":
+               result = dividedNum(arg1,arg2);
+               break;
+            default:
+               result = "Операция не определена";
+               break;
+         }
+         return result;
+      }
+      let operat = "умножить",
+         ab = 1,
+         bc = 2,
+         operatRes = mathOperation(ab,bc,operat);
+      console.log( "Задание 6: " + ab + " " + operat + " " + bc + " = " + operatRes );
+
+      //  7) * Сравнить null и 0. Попробуйте объяснить результат.
+      console.log("Задание 7: null>=0 " + (null >= 0) + ", здесь null преобразуется в 0");
+      console.log("Задание 7: null<0 " + (null < 0) + ", здесь null преобразуется в 0");
+      console.log("Задание 7: null>0 " + (null > 0) + ", здесь null преобразуется в 0");
+      console.log("Задание 7: null==0 " + (null == 0) + ", значения undefined и null ни к чему не приводятся, они равны друг другу и не равны ничему другому");
+
+      //  8) * С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow),
+      //  где val – заданное число, pow – степень.
+      function power(val, pow){
+         return (pow === 1) ? val : ( val * power(val, pow - 1));
+      }
+      result = power(2,6);
+      console.log("Задание 8: 2 в степени 6 = " + result);
+      result = power(5,6);
+      console.log("Задание 8: 5 в степени 6 = " + result);
+   </script>
+
+</head>
+<body>
+
+</body>
+</html>
