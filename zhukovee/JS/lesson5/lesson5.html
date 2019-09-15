@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>ДЗ5 по JS</title>
+
+   <style>
+      .table_board {
+         border-collapse: collapse;
+      }
+      .table_board td {
+         width: 40px;
+         height: 40px;
+      }
+      .table_board .cell_white {
+         background-color: sandybrown;
+      }
+      .table_board .cell_black {
+         background-color: brown;
+      }
+      .table_board .cell_row {
+         text-align: center;
+         vertical-align: bottom;
+      }
+      .table_board .cell_coll{
+         vertical-align: middle;
+      }
+   </style>
+
+   <script>
+
+
+      // Задание 1
+      function func1(){
+         document.getElementById('text1').innerText='Привет';
+      }
+
+      // Задание 2
+      function func2(){
+         document.getElementById('text2').innerHTML='<h3>Hello</h3>';
+      }
+
+      // Задание 3
+      function func3(){
+         var
+            list = document.querySelectorAll('.menu1 li');
+         for(var i=0; i<list.length; i++) {
+            list[i].innerText += i + 1;
+         }
+      }
+
+      // Задание 4
+      function func4(sign){
+         var
+            op1 = document.getElementById('op1').value,
+            op2 = document.getElementById('op2').value,
+            result = eval(op1 + sign + op2);
+
+         document.getElementById('sign').innerText = sign;
+         document.getElementById('result').innerText = result;
+      }
+
+      // Задание 5
+      function func5(){
+         var
+            listItem = document.getElementById('list'),
+            firstListItem = document.createElement('li');
+
+         firstListItem.innerText = 'Первый элемент списка';
+
+         var
+            menu = listItem.parentNode;
+
+         menu.prepend(firstListItem);
+
+      }
+
+      // Задание 6
+      function func6(){
+
+         var
+            table = document.createElement('table'),
+            letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+            black = true;
+         table.classList.add('table_board');
+         for (var i=0; i<9; i++) {
+            var
+               tr = document.createElement('tr');
+            table.appendChild(tr);
+            for (j = 0; j < 9; j++) {
+               var
+                  td = document.createElement('td');
+               // горизонтальные цифры
+               if (i == 0 && j < 8) {
+                  td.innerText = j + 1;
+                  td.classList.add('cell_row');
+               }
+               // вертикальные
+               else if (j == 8 && i > 0) {
+                  td.innerText = letters[i-1];
+                  td.classList.add('cell_coll');
+               }
+               // клетки
+               if (i > 0 && j < 8) {
+                  if (black) {
+                     td.classList.add('cell_black');
+                  } else {
+                     td.classList.add('cell_white');
+                  }
+                  black = !black;
+               }
+               table.appendChild(td);
+
+            }
+
+            black = !black;
+         }
+         var board = document.getElementById('board');
+         board.innerHTML = '';
+         board.appendChild(table);
+
+      }
+
+
+   </script>
+</head>
+<body>
+<div>
+   Задание 1 <br>
+   <div id="text1">Hello</div>
+   <input type="button" onclick="func1()" value="Перевести">
+
+   <br><br>
+
+   Задание 2 <br>
+   <div id="text2">
+      <b>Hello</b>
+   </div>
+   <input type="button" onclick="func2()" value="Go">
+   <br><br>
+
+   Задание 3
+   <h2>Заголовок.</h2>
+   <ul class="menu1">
+      <li>list</li>
+      <li>list</li>
+      <li>list</li>
+      <li>list</li>
+   </ul>
+   <input type="button" onclick="func3()" value="Go">
+   <br><br>
+
+   Задание 4
+   <input type="text" id="op1"> <span id="sign">?</span> <input type="text" id="op2"> = <span id="result">результат</span><br>
+   <input type="button" onclick="func4('+')" value="+">
+   <input type="button" onclick="func4('-')" value="-">
+   <input type="button" onclick="func4('*')" value="*">
+   <input type="button" onclick="func4('/')" value="/">
+   <br><br>
+
+   Задание 5
+   <ul class="menu2">
+      <li id="list">list</li>
+      <li>list</li>
+      <li>list</li>
+      <li>list</li>
+   </ul>
+   <input type="button" onclick="func5()" value="Go">
+   <br><br>
+
+   Задание 6
+   <input type="button" onclick="func6()" value="Go">
+   <div id="board"></div>
+
+
+</div>
+</body>
+</html>
