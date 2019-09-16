@@ -1,0 +1,215 @@
+body {
+    background-color:  #f8f8f8;
+    font-family: Tahoma, Arial, SansSerif;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.header {
+    height: 250px;
+}
+
+.header .name{
+    float: left;
+}
+.header .logo {
+    margin-left: 50px;
+    float: left;
+}
+
+.header hr{
+    clear: both;
+}
+
+
+.main_menu {
+    font-size: 23px;
+    list-style-type: none;
+    float: right;
+}
+
+.main_menu li{
+    display: inline-block;
+}
+
+.main_menu a {
+    color: grey;
+    text-decoration: none;
+}
+
+.main_menu a:hover {
+    text-decoration: underline;
+    color: silver;
+}
+
+.prop_header {
+    font-size: 18px;
+    color: #000000;
+    font-weight: 400;
+    background-color: #eaeaea;
+}
+
+.prop_shot_description {
+    color: #707070;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+
+}
+
+div .prop_full_description:first-letter,
+div .prop_shot_description:first-letter {
+    font-size: 20px;
+    font-weight: bold;
+    color: darkgreen;
+}
+
+.prop_full_description {
+    color: #484343;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.prop_list {
+    color: #0e0e0e;
+    font-size: 17px;
+    line-height: 26px;
+    list-style-image: url(../images/fishing-hook.png);
+    list-style-position: inside;
+}
+
+.prop_table {
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.prop_table td{
+    border: 1px solid silver;
+    padding: 2px;
+}
+
+.prop_table .table_header {
+    color: grey;
+    text-align: center;
+}
+
+.prop_table tr:first-child {
+    height: 40px;
+}
+
+.prop_shot {
+    float: left;
+    margin-left: 10px;
+}
+
+.prop_button {
+    width: 150px;
+    height: 30px;
+    background-color: silver;
+    border: 1px solid #999999;
+    text-align: center;
+    margin-top: 18px;
+    padding-top: 10px;
+    border-radius: 5px;
+    float: right;
+}
+
+.prop_button:hover {
+    background-color: #999999;
+    border: 1px solid #999999;
+    cursor: pointer;
+}
+
+.prop_button:active {
+    color: white;
+}
+
+
+
+p input, textarea {
+    width: 400px;
+    color: grey;
+    background-color: aliceblue;
+    font-size: 16px;
+    text-transform:capitalize;
+}
+
+p input {
+    height: 26px;
+}
+
+p input[name='email']:focus {
+    color: black;
+    background-color: white;
+}
+
+.small_img {
+    width: 200px;
+    height: 200px;
+    outline: 2px solid gray;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+
+.small_img:hover {
+    outline: none;
+}
+
+.market {
+    width: 100%;
+    display: inline-block;
+}
+
+.product {
+    float: left;
+    margin-right: 66px;
+    margin-bottom: 66px;
+    width: 200px;
+    height: 280px;
+}
+
+.product:nth-child(4),
+.product_flex:nth-child(4)
+{
+    margin-right: 0;
+}
+
+.product img:hover,
+.product_flex img:hover{
+    outline: 1pt solid darkgray;
+}
+
+
+.market_flex {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.product_flex {
+    margin-right: 66px;
+    margin-bottom: 66px;
+    width: 200px;
+    height: 280px;
+}
+
+
+.footer {
+    height: 80px;
+    background-color: #eeeeee;
+}
+
+.footer .right {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
