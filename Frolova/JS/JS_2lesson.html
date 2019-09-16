@@ -1,0 +1,132 @@
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>2 lesson</title>
+    <script>
+        // 1) Дан код: Почему код даёт именно такие результаты?
+        var a = 1, b = 1, c, d;
+        c = ++a;
+        console.log(c); // 2 - сначала происходит увеличение, потом возвращается переменная
+        d = b++;
+        console.log(d); // 1 - сначала возвращается переменная, потом происходит увеличение
+        c = (2 + ++a);
+        console.log(c); // 5 - a - была увеличена до 2, перед использование мы ее еще раз увеличиваем до 3 + 2 = 5
+        d = (2 + b++);
+        console.log(d); // 4 - a - была увеличена до 2, но увеличиваем мы ее уже после использования, т.е. 2 + 2 = 4
+        console.log(a); // 3 - а была увеличина в стр. 8 и 10
+        console.log(b); // 3 - b была увеличина в стр. 9 и 11
+
+        // 2) Чему будет равен x в примере ниже?
+        var a = 2,
+            x = 1 + (a *= 2); // 5
+        console.log(x);
+
+        // 3) Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. Затем написать скрипт, который работает по следующему принципу:
+        // * если a и b положительные, вывести их разность;
+        // * если а и b отрицательные, вывести их произведение;
+        // * если а и b разных знаков, вывести их сумму;
+        // ноль можно считать положительным числом.
+        let e = 5,
+            f = -6;
+        if (e >= 0 && f >= 0) {
+            console.log(e - f);
+        } else if (e < 0 && f < 0) {
+            console.log(e * f);
+        } else {
+            console.log(e + f);
+        }
+
+        // 4) Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.
+        let parm1_15 = 8,
+            resultSwitch = "";
+        // noinspection FallThroughInSwitchStatementJS
+        switch (parm1_15) {
+            case 0:
+                resultSwitch += " 0";
+            case 1:
+                resultSwitch += " 1";
+            case 2:
+                resultSwitch += " 2";
+            case 3:
+                resultSwitch += " 3";
+            case 4:
+                resultSwitch += " 4";
+            case 5:
+                resultSwitch += " 5";
+            case 6:
+                resultSwitch += " 6";
+            case 7:
+                resultSwitch += " 7";
+            case 8:
+                resultSwitch += " 8";
+            case 9:
+                resultSwitch += " 9";
+            case 10:
+                resultSwitch += " 10";
+            case 11:
+                resultSwitch += " 11";
+            case 12:
+                resultSwitch += " 12";
+            case 13:
+                resultSwitch += " 13";
+            case 14:
+                resultSwitch += " 14";
+            case 15:
+                resultSwitch += " 15";
+        }
+        console.log(resultSwitch);
+        // 5) Реализовать основные 4 арифметические операции в виде функций с двумя параметрами.
+        // Обязательно использовать оператор return.
+        function mySum(s1, s2) {
+            return s1 + s2;
+        }
+
+        function mySub(s1, s2) {
+            return s1 - s2;
+        }
+
+        function myMult(s1, s2) {
+            return s1 * s2;
+        }
+
+        function myDiv(s1, s2) {
+            return s1 / s2;
+        }
+
+        // 6) Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+        // где arg1, arg2 – значения аргументов, operation – строка с названием операции.
+        // В зависимости от переданного значения операции выполнить одну из арифметических операций
+        // (использовать функции из пункта 3) и вернуть полученное значение (использовать switch).
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case "+":
+                    return mySum(arg1, arg2);
+                case "-":
+                    return mySub(arg1, arg2);
+                case "*":
+                    return myMult(arg1, arg2);
+                case "/":
+                    return myDiv(arg1, arg2);
+                default:
+                    return "Введите другую операцию";
+            }
+        }
+
+        console.log("Результат математической операции: " + mathOperation(10, 16, "*"));
+        // 7) * Сравнить null и 0. Попробуйте объяснить результат. - false
+        // 8) * С помощью рекурсии организовать функцию возведения числа в степень.
+        // Формат: function power(val, pow), где val – заданное число, pow – степень
+        function power(val, pow) {
+            if (pow == 0)
+                return 1;
+            if (pow < 0)
+                return power(1 / val, -pow);//не сразу заложилась на отрицательную степень, дописала после просмотра следующей лекции
+            return val * power(val, pow - 1);
+        }
+
+        console.log("Возведение в степень: " + power(2, 10));
+    </script>
+</head>
+<body>
+</body>
+</html>

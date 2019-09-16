@@ -1,0 +1,118 @@
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>4 lesson</title>
+    <script>
+        // 1.Создайте объект с 4 людьми, ключ объекта будет имя человека, значение это его зарплата (значения могут быть произвольные)
+        // Вывести в консоль, пользователя с максимальной и минимальной зарплатой
+        // Вывести в консоль сумму всех зарплат.
+        // Создать функцию, которая увеличивает зарплату каждого человека на 10%
+        let salary = {
+            Max: 25000,
+            Alex: 9000,
+            John: 50000,
+            Peter: 100000,
+            increaseSalary: function () {
+                for (let nameP in this) {
+                    if (typeof this[nameP] == "number")
+                        this[nameP] += this[nameP] * 0.1;
+                }
+            },
+            commonSalary: function () {
+                let commonSalaryN = 0;
+                for (let nameP2 in this) {
+                    if (typeof this[nameP2] == "number")
+                        commonSalaryN += this[nameP2];
+                }
+                console.log("Общая зарплата составляет: " + commonSalaryN);
+            }
+        };
+        let maxN = "",
+            minN = "",
+            max = -1,
+            min = -1;
+        for (let name in salary) {
+            if (max < salary[name] || max === -1) {
+                max = salary[name];
+                maxN = name;
+            }
+            if (min > salary[name] || min === -1) {
+                min = salary[name];
+                minN = name;
+            }
+        }
+        console.log("Максимальная зарплата у " + maxN + " она составляет: " + salary[maxN]);
+        console.log("Минимальная зарплата у " + minN + " она составляет: " + salary[minN]);
+        salary.commonSalary();
+        salary.increaseSalary();
+        salary.commonSalary();
+        // 2.Создать объект userCount c 4 ключами (count - счетчик правильных ответов, up если ответ верный, должен увеличить значение count на единицу,
+        // down если ответ не верный, должен уменьшить значение count на единицу, showCount вывод результата в консоль) userCount.up(); userCount.up(); userCount.down(); userCount.showCount();
+        let userCount = {
+            count: 0,
+            up: function () {
+                this.count++
+            },
+            down: function () {
+                this.count--;
+            },
+            showCount: function () {
+                console.log(this.count);
+            }
+        };
+        userCount.up();
+        userCount.up();
+        userCount.down();
+        userCount.showCount();
+        // 3.Создать объект food который будет содержать
+        // Метод calc: function(proteins, fats, carbs)
+        // Считать какое соотношение белков ко всей пище, соотношение улеводов и жиров
+        // Проверку на время, в которое пользователь собирается поесть, если время больше 18 и меньше 6, то есть нельзя.
+        let food = {
+            calc: function (proteins, fats, carbs) {
+                console.log("Доля белков: " + Math.trunc((proteins / (proteins + fats + carbs)) * 100) + "%");
+                console.log("Доля улеводов: " + Math.trunc((carbs / (proteins + fats + carbs))* 100) + "%");
+                console.log("Доля жиров: " + Math.trunc((fats / (proteins + fats + carbs))* 100) + "%");
+            },
+            timeToEat: function (curTime) {
+                if (curTime.getHours() <= 18 || curTime.getHours() <= 6) {
+                    console.log("Приятного аппетита!");
+                } else {
+                    console.log("Положи булочку на место");
+                }
+            }
+        };
+        food.calc(100, 200, 300);
+        Data = new Date();
+        food.timeToEat(Data);
+
+        // 4.Написать функцию, преобразующую число в объект. Передавая на вход число от 0 до 999, мы должны получить на выходе объект,
+        // в котором в соответствующих свойствах описаны единицы, десятки и сотни. Например, для числа 245 мы должны получить следующий
+        // объект: {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}. Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.
+        function numToString(myNumber) {
+            let inString = {
+                units: 0,
+                tens: 0,
+                hundreds: 0
+            };
+            if (myNumber > 999) {
+                console.log("Число превышает 999");
+            } else {
+                inString.units = myNumber % 10;
+                if (myNumber % 100 > 10) {
+                    inString.tens = Math.trunc(myNumber % 100 / 10); //Функция Math.trunc() возвращает целую часть числа путём удаления всех дробных
+                }
+                if (myNumber % 1000 > 100) {
+                    inString.hundreds = Math.trunc(myNumber % 1000 / 100);
+                }
+            }
+            console.log("Число " + myNumber + " в объекте ");
+            console.log(inString);
+        }
+
+        numToString(654);
+    </script>
+</head>
+<body>
+</body>
+</html>
