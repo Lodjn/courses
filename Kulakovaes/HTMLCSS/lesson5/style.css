@@ -1,0 +1,218 @@
+@font-face {
+    font-family: "My AmadeusAP";
+    src: url("fonts/WCManoNegraBta.otf");
+}
+
+body {
+   background: #eef8f3;
+}
+
+.container {
+   width: 1000px;
+   margin: 0px auto;
+}
+
+.header {
+   height: 180px;
+   background: url('images/header.png');
+}
+
+.header h2 {
+   background: #eaeaea;
+}
+
+.header ul {
+   list-style-type: none;
+   float: right;
+}
+
+.header ul li {
+   display: inline-block;
+   width: 120px;
+}
+
+.header a {
+   text-decoration: none;
+   font-weight: 900;
+   font-size: 22px;
+   color: #651906;
+   font-style: italic;
+}
+
+.header a:hover {
+   color: #c8eeee;
+}
+
+.header img {
+   width: 150px;
+   height: 100px;
+   border-radius: 200px 0px;
+   border: 4px solid #eaeaea;
+   float: left;
+   margin: 0px 0px 10px 10px;
+}
+
+.body {
+   background: #c8eeee;
+   height: 100%;
+}
+
+.body_catalog {
+    background: #c8eeee;
+    height: 100%;
+    float: left;
+}
+
+.product11 {
+   float: left;
+}
+
+.product12 {
+   overflow: hidden;
+   padding: 0px 10px;
+}
+
+.product2 {
+    clear: both;
+}
+
+.mark_menu li {
+   padding-bottom: 4px;
+}
+
+.header_prod {
+   color: black;
+   font-size: 18px;
+   font-weight: 400;
+   background: #eaeaea;
+}
+
+.short_explain {
+   color: #707070;
+   font-size: 14px;
+   font-style: italic;
+   line-height: 16px;
+}
+
+.big_explain {
+   color: #484343;
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 24px;
+   text-align: left;
+}
+.short_explain:first-letter, .big_explain:first-letter {
+   color: #8786ff;
+   font-size: 30px;
+   font-family: "My AmadeusAP", serif;
+}
+
+.mark_main {
+   color: #484343;
+   font-size: 16px;
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+.mark_main td {
+   border: 3px solid #eaeaea;
+}
+
+.td_first {
+   text-decoration: underline;
+   vertical-align: top;
+}
+
+.photo_product {
+    border: 10px solid #c8a18f;
+}
+
+.photo_product:hover {
+   border: 0;
+   margin: 10px;
+}
+
+.buy {
+   display: block;
+   text-decoration: none;
+   font-weight: 900;
+   font-size: 22px;
+   color: #651906;
+   font-style: italic;
+   float: right;
+   width: 100px;
+   height: 35px;
+   padding-top: 10px;
+   text-align: center;
+   background: #de8178;
+}
+
+.buy:hover {
+   background: #ded3b6;
+}
+
+.buy:active {
+    background: #c2deb4;
+}
+
+.epigraf {
+   color: #707070;
+   font-family: "My AmadeusAP", serif;
+   font-size: 20px;
+}
+
+.input_style, .textarea_style {
+   color: #9188a9;
+   font-weight: 600;
+   font-size: 14px;
+   text-transform: capitalize;
+}
+
+.input_style {
+   width: 459px;
+   height: 24px;
+   margin-top: 4px;
+}
+
+#usermail {
+   text-transform: none;
+}
+
+#usermail:focus {
+   color: #ff784f;
+   background: #bcbcc8;
+}
+
+iframe {
+   width: 100%;
+   height: 374px;
+}
+
+.footer {
+   height: 40px;
+   background: #eaeaea;
+}
+
+.law {
+   float: right;
+   margin: 10px 10px 0px 0px;
+   font-style: italic;
+   font-weight: 900;
+}
+
+.block_container {
+    width: 100%;
+    float: left;
+}
+
+.block_item {
+   float: left;
+   margin-right: 6.6%;
+   margin-bottom: 20px;
+   width: 20%;
+}
+
+.block_item:nth-child(4n) {
+   margin-right: 0px;
+   margin-left: 0.2%;
+}

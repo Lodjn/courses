@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <title>Задание № 3</title>
+   <script>
+      /* Создать объект food который будет содержать
+      Метод calc: function(proteins, fats, carbs)
+      Считать какое соотношение белков ко всей пище, соотношение улеводов и жиров
+      Проверку на время, в которое пользователь собирается поесть, если время больше 18 и меньше 6, то есть нельзя. */
+      function promptWeight() {
+         let weight = 0;
+         do {
+            weight = +prompt('Введите вес интересующего блюда (в граммах):')
+         } while (weight <= 0);
+         return weight;
+      }
+
+      let
+         food = {
+            weight: promptWeight(),
+            time: +prompt('Введите час приёма пищи (значение из интервала от 1 до 24):'),
+            calc: function (proteins, fats, carbs) {
+               console.log('Вес блюда: ' + this.weight + ' гр.');
+               console.log('Белков: ' + proteins + ' гр. (' + Math.round(proteins / this.weight * 100) + '%)');
+               console.log('Жиров: ' + fats + ' гр. (' + Math.round(fats / this.weight * 100) + '%)');
+               console.log('Углеводов: ' + carbs + ' гр. (' + Math.round(carbs / this.weight * 100) + '%)');
+
+               if (this.time >= 6 && this.time <= 18) {
+                  console.log(this.time + ' ч. - хорошее время для приёма пищи.');
+               } else {
+                  console.log('В ' + this.time + ' ч. есть нельзя.');
+               }
+            }
+         },
+         proteins = +prompt('Введите количество белков (в граммах):'),
+         fats = +prompt('Введите количество жиров (в граммах):'),
+         carbs = +prompt('Введите количество углеводов (в граммах):');
+
+      food.calc(proteins, fats, carbs);
+   </script>
+</head>
+<body>
+   <p>Результат смотреть в консоли.</p>
+   <a href="index.html">На главную</a>
+   <a href="task4.html">Задание № 4</a>
+</body>
+</html>

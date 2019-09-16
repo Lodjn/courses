@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <title>Задание № 4</title>
+   <script>
+      /* Написать функцию, преобразующую число в объект.
+      Передавая на вход число от 0 до 999, мы должны получить на выходе объект,
+      в котором в соответствующих свойствах описаны единицы, десятки и сотни.
+      Например, для числа 245 мы должны получить следующий объект: {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}.
+      Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log и
+      вернуть пустой объект. */
+      function numToObj(x) {
+         let obj = {};
+         if (x >=0 && x <= 999) {
+            let
+               hundr = Math.floor(x / 100),
+               dec = Math.floor((x - hundr * 100) / 10);
+
+            obj = {
+               ones: Math.floor(x - hundr * 100 - dec * 10),
+               decades: dec,
+               hundreds: hundr
+            };
+            console.log('Число ' + x + ':');
+         } else {
+            console.log('Число ' + x + ' не попадает в интервал от 0 до 999:');
+         }
+         console.log(obj);
+      }
+
+      let x = +prompt('Введите число от 0 до 999:');
+      numToObj(x);
+   </script>
+</head>
+<body>
+<p>Результат смотреть в консоли.</p>
+<a href="task3.html">Задание № 3</a>
+<a href="index.html">На главную</a>
+<a href="task5.html">Задание № 5</a>
+</body>
+</html>

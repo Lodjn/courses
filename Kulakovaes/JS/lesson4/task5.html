@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <title>Задание № 5</title>
+   <script src="task5.js"></script>
+   <script>
+      /* На базе игры, прикрепленной к уроку, реализовать игру «Кто хочет стать миллионером?» */
+      var
+         event, //то, что выбрал пользователь
+         ok, //Проверка ответа
+         current, //Текущее состояние
+         fiftyFifty = true, //Подсказка 50 на 50
+         gaming = true; //Идет игра
+
+      current = works[0];
+
+      //Процесс игры
+      while (gaming)
+      {
+         var count = 0, answers = '';
+
+         //Формируем строку ответа
+         for (var key in current.answer)
+         {
+            answers += current.answer[key];
+            count++;
+            if (fiftyFifty) count++;
+         }
+         if(count === 0)
+         {
+            alert(current.text);
+            gaming = false;
+            break;
+         }
+
+         //Ввод события и проверка его на правильность
+         do {
+            ok = false;
+            if (fiftyFifty) {
+               event = parseInt(prompt(current.text + answers + '5 - Воспользоваться подсказкой 50 на 50 (только один раз за всю игру)\n -1 - Выход из игры'));
+            } else {
+               event = parseInt(prompt(current.text + answers + '-1 - Выход из игры'));
+            }
+            if(event === 5){
+               fiftyFifty = false;
+            }
+            if(event === -1){
+               alert('Спасибо за игру!');
+               gaming = false;
+               break;
+            } else {
+               ok = isAnswer(count, event);
+            }
+         } while (!ok);
+
+         //Переход к след. вопросу
+         current = works[current.jump[event]];
+      }
+
+      //Функция проверки ответа
+      function isAnswer(q, event) {
+         if(isNaN(event) || !isFinite(event)){
+            alert('Введен недопустимый символ.');
+            return false;
+         } else if(event < 1 || event > q){
+            alert('Ваше число выходит из диапазона.');
+            return false;
+         }
+         return true;
+      }
+   </script>
+</head>
+<body>
+<p>Результат смотреть в консоли.</p>
+<a href="task4.html">Задание № 4</a>
+<a href="index.html">На главную</a>
+</body>
+</html>
