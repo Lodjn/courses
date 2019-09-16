@@ -48,19 +48,28 @@ textarea {
 
 /*menu*/
 
+.menu__list {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu__item {
+    margin-left: 30px;
+}
+
 .menu__item-link {
-    color: #2E8B57;
+    color: #8FBC8F;
     font-size: 17pt;
     font-style: oblique;
 }
 
 .menu__item-link:hover {
-    color: #370000;
+    color: #F0E68C;
     transition: .3s;
 }
 
 .menu__item-link--active {
-    color: #2e5c8a;
+    color: ivory;
 }
 
 h2,
@@ -69,9 +78,17 @@ h2,
 }
 
 h2 {
-    color: black;
     font-size: 18px;
     background-color: #eaeaea;
+}
+
+td {
+    border: 1px solid;
+}
+
+p::first-letter {
+    font-size: 20pt;
+    color: #ec1e79;
 }
 
 .short-text {
@@ -120,6 +137,7 @@ h2 {
 .form__field {
     height: 25px;
     font-size: 15px;
+    text-transform: capitalize;
 }
 
 .form__field--many-text {
@@ -170,7 +188,11 @@ h2 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: #00004d solid 1px;
+    border: #00004d solid 3px;
+}
+
+.images__photo:hover {
+    border-color: transparent;
 }
 
 .images__desc {
@@ -180,4 +202,71 @@ h2 {
 .images__link:hover {
     transition: 0.4s;
     color: #008080;
+}
+
+.header {
+    width: 100%;
+    min-height: 77px;
+    background-color: #27273e;
+    margin-bottom: 30px;
+    font-size: 20pt;
+}
+
+.header__container {
+    display: flex;
+    padding: 20px 0;
+}
+
+.header__left-block {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.header__img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 25px;
+}
+
+.header__text {
+    color: ivory;
+    margin-left: 30px;
+}
+
+.header__right-block {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.footer {
+    background-color: #27273e;
+    color: ivory;
+}
+
+.footer__container {
+    max-height: 100px;
+    padding-top: 13px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-size: 14pt;
+}
+
+.form__field--enter-text:focus {
+    color: #A0522D;
+    background-color: #F0E68C;
+}
+
+.table {
+    border-collapse: collapse;
+}
+
+.table__header {
+    text-align: center;
+    background-color: #F0E68C;
+}
+
+.table__header--height {
+    height: 50px;
 }

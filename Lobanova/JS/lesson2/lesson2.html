@@ -7,14 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Js - lesson2</title>
     <script>
-        /*Почему код даёт именно такие результаты?
-                                                                                                                                                                                                                        var a = 1, b = 1, c, d;
-                                                                                                                                                                                                                        c = ++a; alert(c); // 2
-                                                                                                                                                                                                                        d = b++; alert(d); // 1
-                                                                                                                                                                                                                        c = (2+ ++a); alert(c); // 5
-                                                                                                                                                                                                                        d = (2+ b++); alert(d); // 4
-                                                                                                                                                                                                                        alert(a); // 3
-                                                                                                                                                                                                                        alert(b); // 3*/
+        /*Почему код даёт именно такие результаты?                                                                                                                                                                                                                   var a = 1, b = 1, c, d;                                                                                                                                                                      alert(b); // 3*/
         console.log('Объяснение к заданию 1.');
         console.log('П.1. При выводе переменной c получается 2, т.к. операция ++a является инкрементной с префиксной записью, т.е. увеличение на 1 произошло сразу.');
         console.log('П.2. При выводе переменной d получается 1, т.к. операция a++ является инкрементной с постфиксной записью, т.е. сама переменная b увеличилась на 1 (в памяти), но сложение происходит не сразу.');
@@ -99,18 +92,15 @@
         console.log('Задание 5.');
 
         function summa(a, b) {
-            let res = a + b;
-            return res;
+            return a + b;
         }
 
         function razn(a, b) {
-            let res = a - b;
-            return res;
+            return a - b;
         }
 
         function umn(a, b) {
-            let res = a * b;
-            return res;
+            return a * b;
         }
 
         function del(a, b) {

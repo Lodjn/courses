@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS-homework № 4</title>
+    <script>
+        //Для задания 1
+        let person = {
+            Svetlana: 45000,
+            Konstantin: 50000,
+            Arkadiy: 30000,
+            Nadejda: 25000,
+        };
+
+        function maxSalary(arr) {
+            let max = 0;
+            for (let prop in arr) {
+                if (max < arr[prop]) {
+                    max = arr[prop];
+                }
+            }
+            return max;
+        }
+
+        function minSalary(arr) {
+            let min = Infinity;
+            for (let prop in arr) {
+                if (min > arr[prop]) {
+                    min = arr[prop];
+                }
+            }
+            return min;
+        }
+
+        function summaSalary(arr) {
+            let summa = 0;
+            for (let prop in arr) {
+                summa = summa + arr[prop];
+            }
+            return summa;
+        }
+
+        function incSalary(arr) {
+            for (let prop in arr) {
+                arr[prop] = arr[prop] + (arr[prop] * 10 / 100);
+            }
+            return arr;
+        }
+
+        console.log('Задание 1. Максимальная зарплата в зведенном объекте: ' + JSON.stringify(person) + ' равна: ' + maxSalary(person) + '. Минимальная зарплата равна: ' + minSalary(person))
+        console.log('Сумма всех зарплат равна: ' + summaSalary(person));
+        console.log('Увеличили зарплату на 10%: ' + JSON.stringify(incSalary(person)));
+
+        //Для задания 2
+        //userCount c 4 ключами (count - счетчик правильных ответов, up если ответ верный, должен увеличить значение count на единицу, 
+        //down если ответ не верный, должен уменьшить значение count на единицу, 
+        //showCount вывод результата в консоль) 
+        let userCount = {
+            count: 0,
+            up: function() {
+                this.count++;
+            },
+            down: function() {
+                this.count--;
+            },
+            showCount: function() {
+                console.log(this.count);
+            }
+        }
+        console.log('Задание 3.');
+        userCount.up();
+        userCount.up();
+        userCount.down();
+        userCount.showCount();
+
+        //Для задания 3
+        let food = {
+            calc: function(proteins, fats, carbs) {
+                //Считать какое соотношение белков ко всей пище, соотношение улеводов и жиров
+                //Стандартная схема соотношения БЖУ для поддержания текущего веса (в процентном соотношении): 30 / 20 / 50
+                //1 г белка = 4ккал, 1 г жира = 9ккал, 1 г углеводов = 4ккал
+                //Пример для расчета
+                //1. Белки = (1430 х 0.3) // 4 = 107 г.
+                //2. .Жиры = (1430 х 0.25) // 9 = 40 г.
+                //3. Углеводы = (1430 х 0.45) // 4 = 161 г.
+                str = prompt('Задание 3. Введите, пожалуйста, через запятую процентное соотношение белков, жиров и углеводов из вашей схемы БЖУ. Если вы ее не знаете, можете взять стандартную - 30, 20, 50');
+                proteins = +(str.substring(0, 2)) / 100;
+                fats = +(str.substring(4, 6)) / 100;
+                carbs = +(str.substring(8, 10)) / 100;
+                let weight = +prompt('Введите, пожалуйста, вес вашего приема пищи в граммах');
+
+                console.log('Количество белков = ' + weight * proteins / 4);
+                console.log('Количество жиров = ' + weight * fats / 9);
+                console.log('Количество углеводов = ' + weight * carbs / 4);
+            },
+            checkTime: function() {
+                //Проверка на время, в которое пользователь собирается поесть, если время больше 18 и меньше 6, то есть нельзя.
+                data = new Date();
+                hour = data.getHours();
+                if (hour >= 18 || hour < 6) {
+                    console.log('Еще неподходящее время для приема пищи');
+                } else {
+                    console.log('Время кушать');
+                    this.calc();
+                }
+
+            }
+        }
+        console.log(food.checkTime());
+        //4.Написать функцию, преобразующую число в объект. Передавая на вход число от 0 до 999, мы должны получить на выходе объект, в котором в соответствующих свойствах описаны единицы, десятки и сотни. 
+        //Например, для числа 245 мы должны получить следующий объект: {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}. Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.
+        console.log('Задание 4.')
+
+        function NumToObject(num) {
+            let obj = {};
+            if (num < 0 || num > 999 || isNaN(num)) {
+                console.log('Необходимо ввести число от 0 до 999');
+                return JSON.stringify(obj);
+            } else {
+                obj['единицы'] = num % 10;
+                obj['десятки'] = (num - obj['единицы']) % 100 / 10;
+                obj['сотни'] = Math.floor(num / 100);
+                return JSON.stringify(obj);
+            }
+        }
+        let a = +prompt('Задание 4. Введите число в промежутке от 0 до 999');
+        console.log('Результат: ' + NumToObject(a));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
