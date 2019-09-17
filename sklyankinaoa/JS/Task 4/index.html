@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Task 4</title>
+   <script>
+      /*1.Создайте объект с 4 людьми, ключ объекта будет имя человека,
+      значение это его зарплата (значения могут быть произвольные)
+      Вывести в консоль, пользователя с максимальной и минимальной зарплатой
+      Вывести в консоль сумму всех зарплат.
+      Создать функцию, которая увеличивает зарплату каждого человека на 10%*/
+      console.log("Задание 1:");
+      function incCash( objPeople ) {
+         let res = "";
+         for (let user in objPeople) {
+            objPeople[user] = objPeople[user] + objPeople[user]*0.01;
+            res += res!==""?("; " + user + " - " + objPeople[user]):(user + " - " + objPeople[user]);
+         }
+         return res;
+      }
+      
+      let peoplesCash = {
+          Mary: 15000,
+          Gary: 20000,
+          Steve: 12300,
+          Oliv: 18650
+      };
+
+      let minCash = 0,
+         minCashName = "",
+         maxCash = 0,
+         maxCashName = "",
+         sumAllCash = 0;
+      for (let user in peoplesCash) {
+         sumAllCash += peoplesCash[user];
+         if (minCash===0 && maxCash===0) {
+            minCash = peoplesCash[user];
+            maxCash = peoplesCash[user];
+            minCashName = user;
+            maxCashName = user;
+         }
+         else {
+            if (peoplesCash[user]<minCash) {
+               minCash = peoplesCash[user];
+               minCashName = user;
+            }
+            if (peoplesCash[user]>maxCash) {
+               maxCash = peoplesCash[user];
+               maxCashName = user;
+            }
+         }
+      }
+      console.log( maxCashName + " получает максимальную зарплату " + maxCash );
+      console.log( minCashName + " получает минимальную зарплату " + minCash );
+      console.log( "Сумма всех зарплат " + sumAllCash );
+      console.log( "Зарплаты после увеличения " + incCash( peoplesCash ) );
+
+      /*2.Создать объект userCount c 4 ключами
+      (count - счетчик правильных ответов,
+      up если ответ верный, должен увеличить значение count на единицу,
+      down если ответ не верный, должен уменьшить значение count на единицу,
+      showCount вывод результата в консоль) userCount.up(); userCount.up(); userCount.down(); userCount.showCount();*/
+      console.log("Задание 2:");
+      let userCount = {
+         count: 0,
+         up: function () {
+             this.count += 1;
+         },
+         down: function () {
+             this.count -= 1;
+         },
+         showCount: function () {
+             console.log(this.count);
+         }
+      };
+      userCount.up(); userCount.up(); userCount.down(); userCount.showCount();
+
+      /*3.Создать объект food который будет содержать
+      Метод calc: function(proteins, fats, carbs)
+      Считать какое соотношение белков ко всей пище, соотношение улеводов и жиров
+      Проверку на время, в которое пользователь собирается поесть, если время больше 18 и меньше 6, то есть нельзя.*/
+      console.log("Задание 3:");
+      let food = {
+         calc: function (proteins, fats, carbs) {
+            let sumAll = proteins + fats + carbs;
+            console.log("белки " + (proteins/sumAll).toFixed(1) );
+            console.log("жиры " + (fats/sumAll).toFixed(1) );
+            console.log("углеводы " + (carbs/sumAll).toFixed(1) );
+         }
+      };
+      food.calc(25, 11, 6);
+
+      let day = new Date();
+      let hours = day.getHours();
+      let minutes = day.getMinutes();
+      minutes = ("00" + minutes).slice(-2);
+      
+      let timeStr = hours + ":" + minutes;
+      if( minutes!==0 && ( ( hours>=18 && hours<=23 ) || ( hours>=0 && hours<=6 ) )  ){
+          console.log("Время " + timeStr + " - нельзя кушать");
+      } 
+      else {
+         console.log("Время " + timeStr + " - можно кушать");
+      }
+      
+      /*4.Написать функцию, преобразующую число в объект. Передавая на вход число от 0 до 999,
+      мы должны получить на выходе объект, в котором в соответствующих свойствах описаны единицы, десятки и сотни.
+      Например, для числа 245 мы должны получить следующий объект: {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}.
+      Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.*/
+      console.log("Задание 4:");
+      function objNum(num) {
+         if (num) {
+            let numObject = {};
+            if (num > 999) {
+                console.log("Число превышает 999");
+                return numObject;
+            } else {
+               let strNum = num.toString();
+               for (let i = strNum.length; i > 0; i--) {
+                  let index = i - 1;
+                  if (i === strNum.length)
+                     numObject["единицы"] = strNum[index];
+                  if (i === strNum.length - 1)
+                     numObject["десятки"] = strNum[index];
+                  if (i === strNum.length - 2)
+                     numObject["сотни"] = strNum[index];
+               }
+               console.log(numObject);
+            }
+         } else console.log("Вы не ввели число");
+      }
+      let sameNum = prompt("Введите число до 999")
+      objNum(sameNum);
+   </script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Task 5</title>
+   <style>
+      table {
+         border-collapse: collapse;
+         border-spacing: 0;
+      }
+      td {
+         width: 25px;
+         height: 25px;
+         text-align: center;
+         vertical-align: middle;
+      }
+      .whiteTd {
+         background-color: #ffffff;
+         color: #000000;
+      }
+      .blackTd {
+         background-color: #000000;
+         color: #ffffff;
+      }
+      .cell_bottomborder {
+         border-bottom: 1px solid black;
+      }
+      .cell_rightborder {
+         border-right: 1px solid black;
+      }
+   </style>
+</head>
+<body>
+
+<div id="Task1">
+   <h3>Задание 1</h3>
+   <button id="onclickButton1">Поменять текст "Hello" на "Привет"</button>
+   <span id="testTask1">Hello</span>
+</div>
+<hr>
+<div id="Task2">
+   <h3>Задание 2</h3>
+   <button id="onclickButton2">Заменить тег "b" на "h3"</button>
+   <b id="testTask2">Hello</b>
+</div>
+<hr>
+<div id="Task3">
+   <h3>Задание 3</h3>
+   <h2>Заголовок.</h2>
+   <ul>
+      <li class="liID">list</li>
+      <li class="liID">list</li>
+      <li class="liID">list</li>
+      <li class="liID">list</li>
+   </ul>
+</div>
+<hr>
+<div id="Task4">
+   <h3>Задание 4</h3>
+   <input type="number" id="first_term"> <span id="znak">?</span> <input type="number" id="second_term"> = <span id="res">результат</span><br>
+   <button onclick="funcTask4('+')">+</button>
+   <button onclick="funcTask4('-')">-</button>
+   <button onclick="funcTask4('*')">*</button>
+   <button onclick="funcTask4('/')">/</button>
+</div>
+<hr>
+<div id="Task5">
+   <h3>Задание 5</h3>
+   <ul id="listId">
+      <li>#list</li>
+   </ul>
+</div>
+<hr>
+<div id="Task6">
+   <h3>Задание 6</h3>
+   <div id="chess"></div>
+</div>
+<script>
+   /*1. Есть кнопка button рядом с ней есть текст (Hello) необходимо при нажатии на кнопку поменять текст кнопки на (Привет)*/
+   let onclick1 = document.getElementById("onclickButton1");
+   onclick1.onclick = function () {
+      let contentTask1 = document.getElementById("testTask1");
+      contentTask1.innerHTML = "Привет";
+   };
+   
+   /*2. Есть кнопка button рядом с ней есть тэг <b></b> (Hello) необходимо при нажатии на кнопку поменять тэг на <h3></h3>*/
+   let onclick2 = document.getElementById("onclickButton2");
+   onclick2.onclick = function () {
+      let h3 = document.createElement("h3"),
+          tekst = document.createTextNode("Hello"),
+          parent = document.getElementById("Task2"),
+          child = document.getElementById("testTask2");
+      
+      h3.appendChild(tekst);
+      parent.replaceChild(h3, child);
+   };
+   
+   /*3. Дан код
+   <h2>Заголовок.</h2>
+   <ul>
+   <li>list</li>
+   <li>list</li>
+   <li>list</li>
+   <li>list</li>
+   </ul>
+   Поменяйте содержимое списка на текс list их порядковый номер в коде.*/
+   function changeText() {
+      let contentTask3 = document.getElementsByClassName("liID");
+      for (let i = 0; i<contentTask3.length; i++) {
+         contentTask3[i].innerHTML = String(i+1);
+      }
+   }
+   changeText();
+   
+   /*4. Создаека калькулятор
+   Есть 2 инпута и знак вопроса между ними дальше равенство и поле результата, в итоге должно получиться
+   <input type="text"> <span>?</span> <input type="text"> = <span>результат</span><br>
+   <button>+</button> // при нажатии необходимо сложить
+   <button>-</button> // при нажатии необходимо вычесть
+   <button></button> // при нажатии необходимо умножить
+   <button>/</button> // при нажатии необходимо делить*/
+   function funcTask4(znak) {
+      let itogo = eval(document.getElementById("first_term").value + znak + document.getElementById("second_term").value),
+          znakval = document.getElementById("znak"),
+          result = document.getElementById("res");
+      znakval.innerHTML = znak;
+      result.innerHTML = itogo;
+   }
+   
+   /*5. Дан элемент ul, а в нем li #list. Вставьте перед элементом #list новую li с текстом 'Первый элемент списка'*/
+   let newLi = document.createElement( "li" ),
+       list = document.getElementById("listId");
+   newLi.innerHTML = "Первый элемент списка" ;
+   list.insertBefore(newLi, list.children[ 0 ]);
+   
+   /*6. Упростим задачу шахматной доски, создать просто доску 8 на 8, в которой будут черные и белые ячейки.
+   1)** Создать функцию, генерирующую шахматную доску. При этом можно использовать любые html-теги по своему желанию. Доска должна быть разлинована соответствующим образом, т.е.
+   чередовать черные и белые ячейки. Строки должны нумероваться числами от 1 до 8, столбцы
+   – латинскими буквами A, B, C, D, E, F, G, H.
+   
+   2) **Заполнить созданную таблицу буквами, отвечающими за шахматную фигуру, например К-
+   король, Ф – ферзь и тп., причем все фигуры должны стоять на своих местах и быть
+   соответственно черными и белыми.
+   
+   3) ** Заменить буквы, обозначающие фигуры картинками.*/
+   window.onload = function () {
+      let newTable = document.createElement("table"),
+          parentChess = document.getElementById("chess"),
+          letters = ["A","B","C","D","E","F","G","H"];
+          
+      //создала таблицу с классом "chess_table"
+      newTable.className = "chess_table";
+      
+      //добавила таблицу в html
+      parentChess.appendChild(newTable);
+      
+      let itsWorB = 0;
+      //создала строки tr
+      for (let x=0; x<9; x++) {
+         let newTr = document.createElement("tr");
+         newTable.appendChild(newTr);
+         
+         //создаю ячейки td
+         for (let y = 0; y < 9; y++) {
+            let newTd = document.createElement("td");
+            newTr.appendChild(newTd);
+            
+            //рисуем черные и белые клетки
+            if (x>0 && y>0) {
+               if (itsWorB) {
+                  newTd.className = "whiteTd";
+               } else {
+                  newTd.className = "blackTd";
+               }
+            }
+            //если отрисовали черную клетку, то следующп должна стать белой
+            itsWorB = !itsWorB;
+            
+            //нумерация строк от 1 до 8 в 1ом столбце
+            if (y === 0 && x < 9 && x!==0) {
+               newTd.innerHTML = String(x);
+               newTd.className = "cell_rightborder";
+            }
+            
+            //выводим буквы в 1ой строке
+            if (x === 0 && y > 0) {
+               newTd.innerHTML = letters[y-1];
+               newTd.className = "cell_bottomborder";
+            }
+            
+            //растановка фигур 1 ряд
+            if (x===1 || x===8) {
+               if (y===1 || y===8){
+                  newTd.innerHTML = "Л";
+               } else if (y===2 || y===7){
+                  newTd.innerHTML = "К";
+               } else if (y===3 || y===6){
+                  newTd.innerHTML = "C";
+               } else if (y===4){
+                  newTd.innerHTML = "Ф";
+               } else if (y===5){
+                  newTd.innerHTML = "К";
+               }
+            } else if ((x===2 || x===7) && y!==0){
+               newTd.innerHTML = "П";
+            }
+         }
+      }
+   };
+</script>
+</body>
+</html>
