@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+		function sl(c,d){
+			res1 = c + d;
+			return res1;
+		}
+		function vich(c,d){
+			res2 = c-d;
+			return res2;
+		}
+		function ymn(c,d){
+			res3 = c*d;
+			return res3;
+		}
+		function del(c,d) {
+			res4 = c/d;
+			return res4;
+		}
+		//6) Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 3) и вернуть полученное значение (использовать switch).
+		function mathOperation(arg1, arg2, operation){
+			let oper;
+			switch(operation){
+				case 'sl': 
+				oper = sl(c,d);
+				break;
+				case 'vich':
+				oper = vich(c,d);
+				break;
+				case 'ymn':
+				oper = ymn(c,d);
+				break;
+				case 'del':
+				oper = del(c,d);
+				break;
+				default:
+				oper = 'Ввели не правильное значение';
+			}
+			 return oper;
+		}
+
+		let c = +prompt('Введите первое значение');
+		let d = +prompt('Введите второе значение');
+
+		console.log ('Результат сложения чисел ' + mathOperation(c,d,'sl') );
+		console.log ('Результат вычитания чисел ' + mathOperation(c,d,'vich') );
+		console.log ('Результат умножения чисел ' + mathOperation(c,d,'ymn') );
+		console.log ('Результат деления чисел ' + mathOperation(c,d,'del') );
+	</script>
+</head>
+<body>
+
+</body>
+</html>
