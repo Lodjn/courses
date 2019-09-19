@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //задание 1
+        console.log('1. Ответ: Код дает такие результаты потому, что используется запись операторов в префиксной и постфиксной форме');
+
+        //задание 2
+        let a=2,
+            x=1+(a*=2);
+        console.log('2. Ответ:' +x);
+
+        //задание 3
+        function chislo(a, b) {
+            if (a >= 0 && b >= 0) {
+                console.log('3. Ответ a-b:' + (a - b));
+            } else if (a < 0 && b < 0) {
+                console.log('3. Ответ a*b:' + (a * b));
+            } else {
+                console.log('3. Ответ a+b:' + (a + b));
+            }
+        }
+        chislo(10, 22);
+        chislo(-5, -4);
+        chislo(-7, 45);
+
+        //задание 4, так как в задании 1 уже использована переменная а, поэтому назвала ее b
+        let b=+prompt('Введите значение:');
+        console.log('4. Ответ: ');
+        switch (b) {
+            case 0:
+                console.log(b++);
+            case 1:
+                console.log(b++);
+            case 2:
+                console.log(b++);
+            case 3:
+                console.log(b++);
+            case 4:
+                console.log(b++);
+            case 5:
+                console.log(b++);
+            case 6:
+                console.log(b++);
+            case 7:
+                console.log(b++);
+            case 8:
+                console.log(b++);
+            case 9:
+                console.log(b++);
+            case 10:
+                console.log(b++);
+            case 11:
+                console.log(b++);
+            case 12:
+                console.log(b++);
+            case 13:
+                console.log(b++);
+            case 14:
+                console.log(b++);
+            case 15:
+                console.log(b++);
+                break;
+            default:
+                console.log('неверное значение');
+                break;
+        }
+
+        //задание 5
+        function sum(c, d){
+            return c + d;
+        }
+
+        function raz(c, d){
+            return c - d;
+        }
+
+        function um(c, d){
+            return c * d;
+        }
+
+        function del(c, d){
+            return c / d;
+        }
+
+        //задание 6
+        function mathOperation(arg1, arg2, operation){
+            console.log('6. Ответ:');
+            switch (operation) {
+                case '*':
+                    console.log('arg1 * arg2: ' + (arg1 * arg2));
+                    break;
+                case '/':
+                    console.log('arg1 / arg2: ' + (arg1 / arg2));
+                case '+':
+                    console.log('arg1 + arg2: ' + (arg1 + arg2));
+                    break;
+                case '-':
+                    console.log('arg1 - arg2: ' + (arg1 - arg2));
+                    break;
+                default:
+                    console.log('Неверно введены данные');
+                    break;
+            }
+        }
+        let arg1=+prompt('Введите значение arg1: '),
+            arg2=+prompt('Введите значение arg2: '),
+            operation=prompt('Введите значение операции');
+        //if (arg1 != undefined && arg2!=undefined && operation!=undefined)
+           mathOperation(arg1, arg2, operation);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
