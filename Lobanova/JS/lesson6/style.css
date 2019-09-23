@@ -1,0 +1,38 @@
+div:not(.child),
+input,
+button {
+    margin-bottom: 10px;
+}
+
+div>input {
+    display: block;
+}
+
+#box {
+    height: 400px;
+    width: 400px;
+    border: 1px solid black;
+}
+
+.child {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: green;
+}
+
+.image {
+    width: 100px;
+}
+
+#big {
+    width: 320px;
+    height: 320px;
+    border: 1px solid black;
+}
+
+#big img {
+    width: 320px;
+    object-fit: contain;
+    height: 320px;
+}
