@@ -12,48 +12,57 @@
       console.log("Задание 1:");
       function incCash( objPeople ) {
          let res = "";
-         for (let user in objPeople) {
-            objPeople[user] = objPeople[user] + objPeople[user]*0.01;
-            res += res!==""?("; " + user + " - " + objPeople[user]):(user + " - " + objPeople[user]);
+         for (let key in objPeople) {
+            if (key!=="addCash")
+               res += (res!=="")?("; " + key + " - " + objPeople[key]):(key + " - " + objPeople[key]);
          }
          return res;
       }
       
       let peoplesCash = {
-          Mary: 15000,
-          Gary: 20000,
-          Steve: 12300,
-          Oliv: 18650
+         Mary: 15000,
+         Gary: 20000,
+         Steve: 12300,
+         Oliv: 18650,
+         addCash: function () {
+            for (let key in this) {
+               if (key!=="addCash")
+                  this[key] = this[key] + this[key]*0.1;
+            }
+         }
       };
 
       let minCash = 0,
-         minCashName = "",
-         maxCash = 0,
-         maxCashName = "",
-         sumAllCash = 0;
+          minCashName = "",
+          maxCash = 0,
+          maxCashName = "",
+          sumAllCash = 0;
       for (let user in peoplesCash) {
-         sumAllCash += peoplesCash[user];
-         if (minCash===0 && maxCash===0) {
-            minCash = peoplesCash[user];
-            maxCash = peoplesCash[user];
-            minCashName = user;
-            maxCashName = user;
-         }
-         else {
-            if (peoplesCash[user]<minCash) {
+         if (user!=="addCash") {
+            sumAllCash += peoplesCash[user];
+            if (minCash===0 && maxCash===0) {
                minCash = peoplesCash[user];
-               minCashName = user;
-            }
-            if (peoplesCash[user]>maxCash) {
                maxCash = peoplesCash[user];
+               minCashName = user;
                maxCashName = user;
+            }
+            else {
+               if (peoplesCash[user]<minCash) {
+                  minCash = peoplesCash[user];
+                  minCashName = user;
+               }
+               if (peoplesCash[user]>maxCash) {
+                  maxCash = peoplesCash[user];
+                  maxCashName = user;
+               }
             }
          }
       }
-      console.log( maxCashName + " получает максимальную зарплату " + maxCash );
-      console.log( minCashName + " получает минимальную зарплату " + minCash );
-      console.log( "Сумма всех зарплат " + sumAllCash );
-      console.log( "Зарплаты после увеличения " + incCash( peoplesCash ) );
+      console.log(maxCashName + " получает максимальную зарплату " + maxCash);
+      console.log(minCashName + " получает минимальную зарплату " + minCash);
+      console.log("Сумма всех зарплат " + sumAllCash);
+      peoplesCash.addCash();
+      console.log("Зарплаты после увеличения на 10%: " + incCash(peoplesCash));
 
       /*2.Создать объект userCount c 4 ключами
       (count - счетчик правильных ответов,
@@ -81,34 +90,38 @@
       Проверку на время, в которое пользователь собирается поесть, если время больше 18 и меньше 6, то есть нельзя.*/
       console.log("Задание 3:");
       let food = {
-         calc: function (proteins, fats, carbs) {
+         calc: function(proteins, fats, carbs) {
             let sumAll = proteins + fats + carbs;
-            console.log("белки " + (proteins/sumAll).toFixed(1) );
-            console.log("жиры " + (fats/sumAll).toFixed(1) );
-            console.log("углеводы " + (carbs/sumAll).toFixed(1) );
+            console.log("белки " + (proteins / sumAll).toFixed(1));
+            console.log("жиры " + (fats / sumAll).toFixed(1));
+            console.log("углеводы " + (carbs / sumAll).toFixed(1));
          },
          youCanEat: false,
-         timeBefore6pm: function () {
+         timeBefore6pm: function() {
             this.youCanEat = true;
          },
-         timeAfter6pm: function () {
+         timeAfter6pm: function() {
             this.youCanEat = false;
          },
-         testTime: function () {
-            if( this.youCanEat === true ) {
-               console.log("Сейчас можно покушать");
-            }
-            else {
-               console.log("Сейчас кушать нельзя");
+         testTime: function(testHour, testMinute) {
+            if (testMinute !== 0 && ((testHour >= 18 && testHour <= 23) || (testHour >= 0 && testHour <= 6))) {
+               this.timeAfter6pm();
+            } else {
+               this.timeBefore6pm();
             }
          }
       };
       food.calc(25, 11, 6);
-      food.timeBefore6pm();
-      food.testTime();
-      food.timeAfter6pm();
-      food.testTime();
-      
+
+      let day = new Date();
+      let hours = day.getHours();
+      let minutes = day.getMinutes();
+      food.testTime(hours, minutes);
+      if (food.youCanEat) {
+         console.log("Сейчас на часах " + hours + ":" + minutes + " - кушать можно" );
+      } else {
+         console.log("Сейчас на часах " + hours + ":" + minutes + " - нельзя кушать" );
+      }
       
       /*4.Написать функцию, преобразующую число в объект. Передавая на вход число от 0 до 999,
       мы должны получить на выходе объект, в котором в соответствующих свойствах описаны единицы, десятки и сотни.
@@ -119,8 +132,7 @@
          if (num) {
             let numObject = {};
             if (num > 999) {
-                console.log("Число превышает 999");
-                return numObject;
+               console.log("Число превышает 999");
             } else {
                let strNum = num.toString();
                for (let i = strNum.length; i > 0; i--) {
@@ -132,14 +144,17 @@
                   if (i === strNum.length - 2)
                      numObject["сотни"] = strNum[index];
                }
-               console.log(numObject);
             }
+            console.log(numObject);
          } else console.log("Вы не ввели число");
       }
+
       let sameNum = prompt("Задание 4: Введите число до 999");
-      while (isNaN( sameNum )) {
+
+      while (isNaN(sameNum) || !sameNum) {
          sameNum = prompt("Задание 4: Введите число до 999")
       }
+
       objNum(sameNum);
    </script>
 
