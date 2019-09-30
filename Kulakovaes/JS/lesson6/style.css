@@ -1,0 +1,76 @@
+#box, #big {
+   width: 404px;
+   height: 404px;
+   border: 2px solid black;
+   box-sizing: border-box;
+}
+
+#big{
+   float: left;
+}
+
+#child {
+   width: 50px;
+   height: 50px;
+   background-color: green;
+   position: absolute;
+}
+
+.image {
+   width: 132px;
+   height: 132px;
+}
+
+.no-image {
+   color: grey;
+   background-color: #e9f1e9;
+   font-weight: 800;
+   font-size: 20px;
+   font-style: italic;
+   text-align: center;
+   padding-top: 190px;
+}
+
+.arrow {
+   float: left;
+   font-size: 38px;
+   margin-top: 181px;
+}
+
+.div-image {
+   clear: both;
+   padding-left: 54px;
+}
+
+.active-image {
+   border-bottom: 2px solid red;
+   box-sizing: border-box;
+}
+
+#id-shop-basket {
+   float: left;
+   width: 25%;
+}
+
+#id-shop-container {
+   float: right;
+   width: 75%;
+}
+
+.shop-image {
+   width: 120px;
+   height: 120px;
+   margin-bottom: 2px;
+   color: grey;
+   background-color: #e9f1e9;
+   font-weight: 800;
+   font-size: 16px;
+   font-style: italic;
+   text-align: center;
+}
+
+.shop-item {
+   float: left;
+   margin-left: 3px;
+   margin-bottom: 10px;
+}

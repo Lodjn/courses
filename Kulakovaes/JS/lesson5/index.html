@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <title>Урок 5</title>
+   <link href="style.css" rel="stylesheet">
+   <script src="script.js" defer></script>
+</head>
+<body>
+   <!-- Task №1. Есть кнопка button рядом с ней есть текст (Hello) необходимо при нажатии на кнопку поменять текст кнопки на (Привет) -->
+   <div>TASK №1.</div>
+   <span id="text1">Hello</span>
+   <button onclick="myTranslate();">Перевести</button>
+   <!-- Task №2. Есть кнопка button рядом с ней есть тэг <b></b> (Hello) необходимо при нажатии на кнопку поменять тэг на <h3></h3> -->
+   <div>-----------------------</div>
+   <div>TASK №2.</div>
+   <b id="text2">Hello</b>
+   <button onclick="myChangeTag();">Сделать заголовеом</button>
+   <!-- Task №3. Дан код
+      <h2>Заголовок.</h2>
+      <ul>
+      <li>list</li>
+      <li>list</li>
+      <li>list</li>
+      <li>list</li>
+      </ul>
+      Поменяйте содержимое списка на текс list их порядковый номер в коде. -->
+   <div>-----------------------</div>
+   <div>TASK №3.</div>
+   <h2>Заголовок.</h2>
+   <ul class="text3">
+      <li>list</li>
+      <li>list</li>
+      <li>list</li>
+      <li>list</li>
+   </ul>
+   <button onclick="myChangeTextList();">Сменить тест списка</button>
+   <!-- Task №4. Cоздаека калькулятор
+      Есть 2 инпута и знак вопроса между ними дальше равенство и поле результата, в итоге должно получиться
+      <input type="text"> <span>?</span> <input type="text"> = <span>результат</span>
+
+      <button>+</button> // при нажатии необходимо сложить
+      <button>-</button> // при нажатии необходимо вычесть
+      <button></button> // при нажатии необходимо умножить
+      <button>/</button> // при нажатии необходимо делить -->
+   <div>-----------------------</div>
+   <div>TASK №4.</div>
+   <input type="text" id="input1"> <span id="oper">?</span> <input type="text" id="input2"> = <span id="rezult">результат</span>
+   <button onclick="myOperation('+');">+</button>
+   <button onclick="myOperation('-');">-</button>
+   <button onclick="myOperation('*');">*</button>
+   <button onclick="myOperation('/');">/</button>
+   <!-- Task №5. Дан элемент ul, а в нем li #list. Вставьте перед элементом #list новую li с текстом 'Первый элемент списка' -->
+   <div>-----------------------</div>
+   <div>TASK №5.</div>
+   <ul id="text5">
+      <li id="list">По умолчанию</li>
+   </ul>
+   <button onclick="myAddList();">Добавить пункт в список</button>
+   <!-- Task №6. Создать функцию, генерирующую шахматную доску.
+      При этом можно использовать любые html-теги по своему желанию.
+      Доска должна быть разлинована соответствующим образом, т.е. чередовать черные и белые ячейки.
+      Строки должны нумероваться числами от 1 до 8,
+      столбцы – латинскими буквами A, B, C, D, E, F, G, H. -->
+   <div>-----------------------</div>
+   <div>TASK №6.</div>
+   <div class="chess_container"></div>
+   <button class="chess_button" onclick="myChess();">Расставить фигуры</button>
+</body>
+</html>
