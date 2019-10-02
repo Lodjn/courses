@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Домашнее задание № 6 по JS</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div>
+        1. Дано поле ввода &lt;input type="text"&gt; рядом с ним кнопка +. При нажатии на кнопку необходимо чтобы добавилось еще одно поле ввода
+    </div>
+    <input type="text">
+    <button onclick="addField()">+</button>
+    <div id='task1'></div>
+    <div>
+        2. Дан блок(box) шириной и высотой 400px, внутри которого находится зеленый квадрат шириной 50px(child), необходимо при нажатии на любую область родительского блока(box) чтобы дочерний элемент child переместился в место клика.
+    </div>
+    <div id="box">
+        <div class="child"></div>
+    </div>
+    <div>
+        3. Дано поле ввода &lt;input type="text"&gt; под ним кнопка. При нажатии на кнопку необходимо чтобы произошло дублирование данного инпута. (cloneNode необходимо использовать и понять что это за зверь такой)
+    </div>
+    <div id='task3'>
+        <input type="text">
+    </div>
+
+    <button onclick="addClone()">cloneNode</button>
+    <div>4. Доработать функцию замены картинки в галерее таким образом, чтобы она проверяла наличие картинки по указанному в src адресу</div>
+    <div id='big'></div>
+    <div id='gallery'>
+        <img src="./img/small/image1.jpg" alt="Енот 1" class="image">
+        <img src="./img/small/image2.jpg" alt="Енот 2" class="image">
+        <img src="./img/small/image3.jpg" alt="Енот 3" class="image">
+        <img src="./img/small/image333.jpg" alt="Нет картинки" class="image">
+    </div>
+
+    <script>
+        //task1
+        function addField() {
+            let newField = document.createElement('input');
+            document.getElementById('task1').appendChild(newField);
+        };
+
+        //task2
+        let box = document.getElementById('box'),
+            child = document.getElementsByClassName('child')[0];
+
+        box.addEventListener('click', function() {
+            child.style.top = event.clientY + 'px';
+            child.style.left = event.clientX + 'px';
+        });
+
+        //task3        
+        function addClone() {
+            let input = document.getElementById('task3'),
+                input_clone = input.cloneNode(true);
+            document.getElementById('task3').appendChild(input_clone);
+        }
+
+        //gallery - task4
+        function changePic(event) {
+            let bigDiv = document.getElementById('big');
+            bigDiv.innerHTML = '';
+            let smallSrc = event.currentTarget.getAttribute('src'),
+                newImage = document.createElement('img');
+            newImage.src = smallSrc.replace('small', 'big');
+            //checking
+            newImage.onerror = function() {
+                bigDiv.innerHTML = 'Image is not found';
+            };
+
+            bigDiv.appendChild(newImage);
+        }
+        let images = document.getElementsByClassName('image');
+        for (let j = 0; j < images.length; j++) {
+            images[j].onclick = changePic;
+        }
+    </script>
+</body>
+
+</html>
