@@ -1,0 +1,152 @@
+/***************Галлерея*****************/
+#box, #big {
+   width: 404px;
+   height: 404px;
+   border: 2px solid black;
+   box-sizing: border-box;
+}
+
+#big{
+   float: left;
+}
+
+#child {
+   width: 50px;
+   height: 50px;
+   background-color: green;
+   position: absolute;
+}
+
+.image {
+   width: 132px;
+   height: 132px;
+}
+
+.no-image {
+   color: grey;
+   background-color: #e9f1e9;
+   font-weight: 800;
+   font-size: 20px;
+   font-style: italic;
+   text-align: center;
+   padding-top: 190px;
+}
+
+.arrow {
+   float: left;
+   font-size: 38px;
+   margin-top: 181px;
+}
+
+.div-image {
+   clear: both;
+   padding-left: 54px;
+}
+
+.active-image {
+   border-bottom: 2px solid red;
+   box-sizing: border-box;
+}
+
+/***************Корзина*****************/
+#id-shop-basket {
+   float: left;
+   width: 24%;
+}
+
+#id-shop-container {
+   float: right;
+   width: 75%;
+}
+
+.shop-image {
+   width: 135px;
+   height: 135px;
+   margin-bottom: 2px;
+   color: grey;
+   background-color: #e9f1e9;
+   font-weight: 800;
+   font-size: 16px;
+   font-style: italic;
+   text-align: center;
+}
+
+.shop-item {
+   float: left;
+   margin-left: 3px;
+   margin-bottom: 10px;
+}
+
+.div-block {
+   display: block;
+}
+
+.div-none {
+   display: none;
+}
+
+.shop-basket-empty {
+   text-align: center;
+   color: grey;
+   font-style: italic;
+   margin-top: 5px;
+}
+
+.shop-basket-noempty {
+   text-decoration: underline;
+   margin-top: 5px;
+   margin-bottom: 5px;
+}
+
+.shop-basket-button {
+   display: inline-block;
+   width: 20px;
+   height: 20px;
+   text-align: center;
+   color: #bfbbbb;
+   cursor: default;
+}
+
+.shop-basket-button:hover {
+   color: #9c9a9a;
+}
+
+#id-shop-basket-item {
+   height: 180px;
+   overflow: scroll;
+}
+
+#id-shop-basket-address, #id-shop-basket-comment {
+   height: 180px;
+}
+
+#id-shop-input-address {
+   width: 100%;
+   margin-top: 5px;
+}
+
+#id-shop-input-comment {
+   width: 100%;
+   height: 83%;
+   margin-top: 5px;
+}
+
+/***************Змейка*****************/
+.game-table {
+   border-collapse: collapse;
+   background-color: grey;
+}
+
+.game-table-cell {
+   width: 25px;
+   height: 25px;
+   border: 1px solid black;
+}
+
+.snake-unit {
+   background-color: white;
+}
+
+.food-unit {
+   background-color: darkred;
+}

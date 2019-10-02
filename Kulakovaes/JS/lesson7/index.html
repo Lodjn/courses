@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <title>Урок 7</title>
+   <link href="style.css" rel="stylesheet">
+   <script src="script.js"></script>
+</head>
+<body>
+   <!-- Task №1. Реализовать страницу корзины
+      a. Нужно уметь не только смотреть состав корзины, но и редактировать его,
+      обновляя общую стоимость или выводя “Корзина пустая”.
+      Task №2. На странице корзины
+      a. Сделать отдельные блоки: “Состав корзины”, “Адрес доставки”, “Комментарий”
+      b. Сделать эти поля сворачиваемыми
+      c. Заполнять поля по очереди,
+      т.е. даём посмотреть состав корзины, внизу которого есть кнопка “Далее”.
+      Нажимаем на “Далее”, сворачивается “Состав корзины”, открывается “Адрес доставки” и т.д.-->
+   <div>TASKS №1, №2</div>
+   <div>
+      <div id="id-shop-basket">
+         <div class="div-block" id="id-shop-basket-item">
+            <b>Состав корзины:</b>
+            <div id='shop-cost-all' class="shop-basket-empty">корзина пустая</div>
+         </div>
+         <div class="div-none" id="id-shop-basket-address">
+            <b>Адрес доставки:</b><br>
+            <input type="text" id="id-shop-input-address">
+         </div>
+         <div class="div-none" id="id-shop-basket-comment">
+            <b>Комментарий:</b><br>
+            <textarea id="id-shop-input-comment"></textarea>
+         </div>
+         <button id="id-shop-basket-buttonBack">Назад</button>
+         <button id="id-shop-basket-buttonNext">Далее</button>
+      </div>
+      <div id="id-shop-container">
+         <div class="shop-item" id="id-shop-item-1">
+            <div class="shop-image">Замечательный товар №1</div>
+            <span class="shop-cost" id="id-shop-cost-1">100 руб.</span> <button class='shop-button'>В корзину</button>
+         </div>
+         <div class="shop-item" id="id-shop-item-2">
+            <div class="shop-image">Замечательный товар №2</div>
+            <span class="shop-cost" id="id-shop-cost-2">200 руб.</span> <button class='shop-button'>В корзину</button>
+         </div>
+         <div class="shop-item" id="id-shop-item-3">
+            <div class="shop-image">Замечательный товар №3</div>
+            <span class="shop-cost" id="id-shop-cost-3">300 руб.</span> <button class='shop-button'>В корзину</button>
+         </div>
+         <div class="shop-item" id="id-shop-item-4">
+            <div class="shop-image">Замечательный товар №4</div>
+            <span class="shop-cost" id="id-shop-cost-4">400 руб.</span> <button class='shop-button'>В корзину</button>
+         </div>
+         <div class="shop-item" id="id-shop-item-5">
+            <div class="shop-image">Замечательный товар №5</div>
+            <span class="shop-cost" id="id-shop-cost-5">500 руб.</span> <button class='shop-button'>В корзину</button>
+         </div>
+      </div>
+   </div>
+   <!-- Task №3/ Убрать границы поля.
+      Т.е. при пересечении границы поля змейка появляется с противоположной стороны.-->
+   <div style="clear: both;">-----------------------</div>
+   <div>TASK №3 (сделаю позже, не успеваю)</div>
+   <!--div class="wrap">
+      <div id="snake-field"></div>
+   </div>
+   <div class="button">
+      <div id="snake-new-game">Новая игра</div>
+   </div-->
+   <!-- Task №4. Для задачи со звездочкой из 6 урока реализовать функционал переключения между картинками по стрелкам на клавиатуре.-->
+   <div>-----------------------</div>
+   <div>TASK №4</div>
+   <div>
+      <button class="arrow" id="arrowBack">&#9668;</button>
+      <div id="big"></div>
+      <button class="arrow" id="arrowNext">&#9658;</button>
+   </div>
+   <div class="div-image">
+      <img src="images/small/1.jpg" class="image">
+      <img src="images/small/2.jpg" class="image">
+      <img src="images/small/3.jpg" class="image">
+   </div>   
+</body>
+</html>

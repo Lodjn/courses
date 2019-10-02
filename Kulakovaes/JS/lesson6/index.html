@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <title>Урок 6</title>
+   <link href="style.css" rel="stylesheet">
+   <script src="script.js"></script>
+</head>
+<body>
+   <!-- Task №1. Дано поле ввода <input type="text"> рядом с ним кнопка +.
+      При нажатии на кнопку необходимо чтобы добавилось еще одно поле ввода -->
+   <div>TASK №1.</div>
+   <div id="divTask1">
+      <input type="text">
+   </div>
+   <button id="button1">+</button>
+   <!-- Task №2. Дан блок(box) шириной и высотой 400px, внутри находится зеленый квадрат шириной 50px(child),
+      необходимо при нажатии на любую область родительского блока(box) чтобы дочерний элемент child переместился в место клика. -->
+   <div>-----------------------</div>
+   <div>TASK №2.</div>
+   <div id="box">
+      <div id="child"></div>
+   </div>
+   <!-- Task №3. Дано поле ввода <input type="text"> под ним кнопка.
+      При нажатии на кнопку необходимо чтобы произошло дублирование данного инпута.
+      (cloneNode необходимо использовать и понять что это за зверь такой) -->
+   <div>-----------------------</div>
+   <div>TASK №3.</div>
+   <div id="divTask3">
+      <input type="text" id="input3">
+   </div>
+   <button id="button3">Клонировать</button>
+
+   <!-- Task №4. Доработать функцию замены картинки в галерее таким образом,
+      чтобы она проверяла наличие картинки по указанному в src адресу.
+      Task №6. Добавить в галерею функцию перехода к следующему изображению.
+      По сторонам от большой картинки должны быть стрелки “вперед” и “назад”, по нажатию на которые происходит замена изображения на следующее или предыдущее.-->
+   <div>-----------------------</div>
+   <div>TASKS №4, №6</div>
+   <div>
+      <button class="arrow" id="arrowBack">&#9668;</button>
+      <div id="big"></div>
+      <button class="arrow" id="arrowNext">&#9658;</button>
+   </div>
+   <div class="div-image">
+      <img src="images/small/1.jpg" class="image">
+      <img src="images/small/2.jpg" class="image">
+      <img src="images/small/3.jpg" class="image">
+   </div>
+
+   <!-- Task №5. Реализовать модуль корзины.
+      Создать блок товаров и блок корзины. У каждого товара есть кнопка «Купить»,
+      при нажатии на которую происходит добавление имени и цены товара в блок корзины.
+      Корзина должна уметь считать общую сумму заказа.-->
+   <div>-----------------------</div>
+   <div>TASKS №5</div>
+   <div>
+      <div id="id-shop-basket">
+         <b>Корзина:</b>
+         <div id="id-shop-basket-item"></div>
+         <br>
+         <div id='shop-cost-all'>Сумма заказа: 0 руб.</div>
+      </div>
+      <div id="id-shop-container">
+         <div class="shop-item" id="id-shop-item-1">
+            <div class="shop-image">Замечательный товар №1</div>
+            <span class="shop-cost" id="id-shop-cost-1">100 руб.</span> <button class='shop-button'>Купить</button>
+         </div>
+         <div class="shop-item" id="id-shop-item-2">
+            <div class="shop-image">Замечательный товар №2</div>
+            <span class="shop-cost" id="id-shop-cost-2">200 руб.</span> <button class='shop-button'>Купить</button>
+         </div>
+         <div class="shop-item" id="id-shop-item-3">
+            <div class="shop-image">Замечательный товар №3</div>
+            <span class="shop-cost" id="id-shop-cost-3">300 руб.</span> <button class='shop-button'>Купить</button>
+         </div>
+         <div class="shop-item" id="id-shop-item-4">
+            <div class="shop-image">Замечательный товар №4</div>
+            <span class="shop-cost" id="id-shop-cost-4">400 руб.</span> <button class='shop-button'>Купить</button>
+         </div>
+         <div class="shop-item" id="id-shop-item-5">
+            <div class="shop-image">Замечательный товар №5</div>
+            <span class="shop-cost" id="id-shop-cost-5">500 руб.</span> <button class='shop-button'>Купить</button>
+         </div>
+      </div>
+   </div>
+</body>
+</html>
