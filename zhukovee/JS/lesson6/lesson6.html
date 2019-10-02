@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>ДЗ6 по JS</title>
+
+   <style>
+      #box {
+         width: 400px;
+         height: 400px;
+         background-color: #cccccc;
+      }
+      #child {
+         width: 50px;
+         height: 50px;
+         background-color: white;
+         position: relative;
+      }
+      .image {
+         height: 100px;
+         width: 100px;
+      }
+
+      #big {
+         width: 300px;
+         height: 300px;
+         border: 1px solid black;
+      }
+
+      #big img {
+         width: 300px;
+         height: 300px;
+      }
+
+   </style>
+
+
+   <script>
+
+
+      // Задание 1
+      function func1(){
+         var
+            form1 = document.getElementById('form1'),
+            addInput = document.createElement('input');
+         form1.appendChild(addInput);
+      }
+
+      // Задание 2
+      function func2(eventObj){
+
+         // запомним в глобальной переменной ребенка, чтоб каждый раз не искать по клику
+         if (!child) {
+            child = document.getElementById('child');
+         }
+
+         // если кликнули не на ребенка
+         if (eventObj.target != child) {
+            child.style.top = eventObj.offsetY + 'px';
+            child.style.left = eventObj.offsetX + 'px';
+         }
+
+      }
+
+      // Задание 3
+      function func3(){
+         var
+            input = document.getElementById('input3'),
+            addInput = input.cloneNode(true);
+         input.after(addInput);
+
+      }
+
+      // Задание 4
+      function changePictures(eventObj){
+         var
+            bigDiv = document.getElementById('big');
+         bigDiv.innerHTML = '';
+         var
+            smallSrc = eventObj.currentTarget.getAttribute('src'),
+            newImg = document.createElement('img');
+
+         newImg.src= smallSrc.replace('small','big');
+
+         newImg.onload = function (){
+            bigDiv.appendChild(newImg);
+         };
+
+         newImg.onerror  = function (){
+            bigDiv.innerText = 'Файл не найден:' + newImg.src;
+         };
+
+
+      }
+
+
+      function init() {
+         // для задания 2
+         var box = document.getElementById('box');
+         box.addEventListener('click', func2);
+
+         // для задания 4
+         var images = document.getElementsByClassName('image');
+         for(var j=0; j<images.length; j++) {
+            images[j].onclick = changePictures;
+         }
+
+      }
+
+      window.onload = init;
+
+
+   </script>
+
+</head>
+<body>
+<div>
+   Задание 1 <br>
+   <form id="form1">
+      <input type="button" onclick="func1()" value="+">
+      <input type="text">
+   </form>
+
+   <br><br>
+
+   Задание 2 <br>
+
+   <div id="box">
+      <div id="child"></div>
+   </div>
+
+   <br><br>
+
+   Задание 3 <br>
+   <input type="text" id="input3">
+   <br>
+   <input type="button" onclick="func3()" value="+">
+
+   <br><br>
+
+   Задание 4 <br>
+   <div id="big"></div>
+   <br>
+   <div id="galary">
+      <img id="img_1" src="small/img1.jpg" class="image"/>
+      <img id="img_2" src="small/img2.jpg" class="image"/>
+      <img id="img_3" src="small/img3.jpg" class="image"/>
+   </div>
+
+
+
+
+</div>
+</body>
+</html>
