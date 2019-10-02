@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		//2.Создать объект userCount c 4 ключами (count - счетчик правильных ответов, up если ответ верный, должен увеличить значение count на единицу, down если ответ не верный, должен уменьшить значение
+		//count на единицу, showCount вывод результата в консоль) userCount.up(); userCount.up(); userCount.down(); userCount.showCount();
+		let userCount = {
+			count: 0,
+			up: function(){
+				if(this.up){
+					this.count++;
+				}
+				return this.count;
+			},
+			down: function(){
+				if(this.down){
+					this.count--;
+				}
+				return this.count;
+			},
+			showCount: function(){
+				return this.count;
+			}
+		}
+		console.log(userCount.up());
+		console.log(userCount.up());
+		console.log(userCount.down());
+		console.log(userCount.showCount());
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

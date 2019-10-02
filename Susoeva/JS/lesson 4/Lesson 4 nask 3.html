@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		//3.Создать объект food который будет содержать
+		//Метод calc: function(proteins, fats, carbs)
+		//Считать какое соотношение белков ко всей пище, соотношение улеводов и жиров
+		//Проверку на время, в которое пользователь собирается поесть, если время больше 18 и меньше 6, то есть нельзя.
+		let food = {
+			calc: function (proteins,fats, carbs){
+				let allFood = proteins + fats + carbs;
+				let prot = (proteins * 100)/allFood;
+				let f = (fats * 100)/allFood;
+				let c = (carbs * 100)/allFood;
+				console.log('Соотношение белков ' + prot);
+				console.log('Соотношение жиров ' + f);
+				console.log('Соотношение улеводов ' + c);
+			},
+			time: function (edatime){
+				if (edatime > 18 || edatime < 6){
+					console.log('Есть в это время нельзя!');
+				}
+				else {
+					console.log('Есть можно:)');
+				}
+			}
+		}
+		food.calc(40,30,10);
+		food.time(19);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

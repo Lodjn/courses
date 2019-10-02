@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		// 1.Создайте объект с 4 людьми, ключ объекта будет имя человека, значение это его зарплата (значения могут быть произвольные)
+		// Вывести в консоль, пользователя с максимальной и минимальной зарплатой
+		// Вывести в консоль сумму всех зарплат.
+		// Создать функцию, которая увеличивает зарплату каждого человека на 10%
+		let people = {
+			Anna: 3000,
+			Vova: 2500,
+			Marina: 1600,
+			Sasha: 8680
+		}
+		//console.log(people.prop);
+        let n = 0;
+		for (prop in people){
+			n += people[prop];
+		}
+		console.log('Зарплата у Анны ' + people.Anna);
+		console.log('Зарплата у Вовы ' + people.Vova);
+		console.log('Зарплата у Марины ' + people.Marina);
+		console.log('Зарплата у Саши ' + people.Sasha);
+		console.log('Сумма всех зарплат будет равна:' + n);
+
+		let max = 0,
+		    maxuser = '';
+		for (prop in people){
+			if (max < people[prop]){
+				max = people[prop];
+				maxuser = prop;
+			}
+		}
+		console.log('Пользователь с максимальной зарплатой: '+ maxuser);
+		let min = people.Anna,
+		    minuser = '';
+		for (prop in people){
+			if (min > people[prop]){
+				min = people[prop];
+				minuser = prop;
+			}
+		}
+		console.log('Пользователь с минимальной зарплатой: '+ minuser);
+
+		function premia (people){
+			let p = 0;
+			for (prop in people){
+				people[prop] = Math.round(people[prop] * 1.1);
+				p = Math.round(people[prop] * 1.1);
+				console.log('Премия у пользователя ' + prop + ' ' + people[prop]);
+				
+			}
+		}
+		premia(people);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

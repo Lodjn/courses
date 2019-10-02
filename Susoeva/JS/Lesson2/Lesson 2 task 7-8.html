@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		// 7. Сравнить null и 0. Объяснить результат
+		   console.log('Задание 7. Число ноль - является числовым типом данных, а  Null - это специальное значение, которое имеет смысл «ничего» или «значение неизвестно».');
+		// 8. * С помощью рекурсии организовать функцию возведения числа в степень. Формат: function
+        // power(val, pow), где val — заданное число, pow –— степень.
+        function power (val, pow){
+        	let rez;
+        	if (pow == 1){
+        		rez = val;
+        	}
+        	else{
+        		rez = val * power(val,pow-1)
+        	}
+        	return rez;
+        }
+        let a = +prompt('Введите число');
+        let b = +prompt('Введите степень');
+        console.log('Результать возведения в степень: ' + power(a, b));
+	</script>
+</head>
+<body>
+
+</body>
+</html>
