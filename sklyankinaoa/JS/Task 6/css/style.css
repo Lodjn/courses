@@ -38,3 +38,12 @@
    height: 82px;
    border: 1px solid #000;
 }
+
+#buttonPrev, #buttonNext {
+   vertical-align: top;
+   margin-top: 130px;
+}
+
+.galleryListView {
+   display: inline-block;
+}

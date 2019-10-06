@@ -58,6 +58,7 @@ window.onload = function () {
       
       bigDiv.innerHTML = ""; //Очиста блока
       newImg.src = smallSrc.replace("small","big");//меняем small на big
+      newImg.id = "big_img";
       
       newImg.onload = function(){
          bigDiv.appendChild(newImg);//все ок
@@ -78,4 +79,71 @@ window.onload = function () {
       
    /*6.** Добавить в галерею функцию перехода к следующему изображению. По сторонам от большой картинки должны быть стрелки “вперед” и “назад”, 
       по нажатию на которые происходит замена изображения на следующее или предыдущее.*/
+      
+   function prevImage(event) {
+      let bigDiv = document.getElementById("big_picture"), //большой блок
+          newImgPrev = document.createElement("img"), //создаем новый тег img
+          imagesArr = ["img/gallery/big/img_1.jpg", "img/gallery/big/img_2.jpg", "img/gallery/big/img_3.jpg"];//массив картинок
+          
+
+      if(bigDiv.hasChildNodes()) {
+         let imgDiv = document.getElementById("big_img");
+         for(let i = 0; i < imagesArr.length; i++){
+            let puthImg = imgDiv.src;
+            if(puthImg.indexOf(imagesArr[i])>0) {
+               if((i-1)>=0)
+                  newImgPrev.src = imagesArr[i-1];
+               else
+                  newImgPrev.src = imagesArr[imagesArr.length - 1];
+               newImgPrev.id = "big_img";
+               bigDiv.innerHTML = ""; //Очиста блока
+               bigDiv.appendChild(newImgPrev);//все ок
+               break;
+            }
+         }
+      }
+      else {
+         let newImg = document.createElement("img"); //создаем новый тег img
+         newImg.src = imagesArr[imagesArr.length - 1];//устанавливаем 1 картинку
+         newImg.id = "big_img";
+         bigDiv.appendChild(newImg);//все ок
+      }
+   } 
+   
+   function nextImage(event) {
+      let bigDiv = document.getElementById("big_picture"), //большой блок
+          newImgPrev = document.createElement("img"), //создаем новый тег img
+          imagesArr = ["img/gallery/big/img_1.jpg", "img/gallery/big/img_2.jpg", "img/gallery/big/img_3.jpg"];//массив картинок
+          
+
+      if(bigDiv.hasChildNodes()) {
+         let imgDiv = document.getElementById("big_img");
+         for(let i = 0; i < imagesArr.length; i++){
+            let puthImg = imgDiv.src;
+            if(puthImg.indexOf(imagesArr[i])>0) {
+               if((i+1)==(imagesArr.length))
+                  newImgPrev.src = imagesArr[0];
+               else
+                  newImgPrev.src = imagesArr[i+1];
+               newImgPrev.id = "big_img";
+               bigDiv.innerHTML = ""; //Очиста блока
+               bigDiv.appendChild(newImgPrev);//все ок
+               break;
+            }
+         }
+      }
+      else {
+         let newImg = document.createElement("img"); //создаем новый тег img
+         newImg.src = imagesArr[0];//устанавливаем 1 картинку
+         newImg.id = "big_img";
+         bigDiv.appendChild(newImg);//все ок
+      }
+   }
+   
+   let buttonPrev = document.getElementById("buttonPrev"),
+       buttonNext = document.getElementById("buttonNext"),
+       imagesArr = ["img/gallery/big/img_1.jpg", "img/gallery/big/img_2.jpg", "img/gallery/big/img_3.jpg"];
+
+   buttonPrev.addEventListener("click", prevImage);
+   buttonNext.addEventListener("click", nextImage);
 };
