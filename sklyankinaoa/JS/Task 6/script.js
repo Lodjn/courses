@@ -83,21 +83,22 @@ window.onload = function () {
    function prevImage(event) {
       let bigDiv = document.getElementById("big_picture"), //большой блок
           newImgPrev = document.createElement("img"), //создаем новый тег img
-          imagesArr = ["img/gallery/big/img_1.jpg", "img/gallery/big/img_2.jpg", "img/gallery/big/img_3.jpg"];//массив картинок
+          imagesArr = ["img/gallery/big/img_1.jpg", "img/gallery/big/img_2.jpg", "img/gallery/big/img_3.jpg"];//массив адресов картинок
           
-
+      //проверю на наличе дчерних элементов
       if(bigDiv.hasChildNodes()) {
-         let imgDiv = document.getElementById("big_img");
+         let imgDiv = document.getElementById("big_img");//берем картинку и ищем ее адрес в массиве адресов
          for(let i = 0; i < imagesArr.length; i++){
             let puthImg = imgDiv.src;
             if(puthImg.indexOf(imagesArr[i])>0) {
+               //если нашли нужный адрес, то проверяем есть ли предыдущий, если нет, то берем последнюю картинку (циклим переключние)
                if((i-1)>=0)
                   newImgPrev.src = imagesArr[i-1];
                else
                   newImgPrev.src = imagesArr[imagesArr.length - 1];
-               newImgPrev.id = "big_img";
+               newImgPrev.id = "big_img";//присваиваем идентификатор
                bigDiv.innerHTML = ""; //Очиста блока
-               bigDiv.appendChild(newImgPrev);//все ок
+               bigDiv.appendChild(newImgPrev);//добавляем новую картинку в большое поле
                break;
             }
          }
@@ -105,29 +106,30 @@ window.onload = function () {
       else {
          let newImg = document.createElement("img"); //создаем новый тег img
          newImg.src = imagesArr[imagesArr.length - 1];//устанавливаем 1 картинку
-         newImg.id = "big_img";
-         bigDiv.appendChild(newImg);//все ок
+         newImg.id = "big_img";//присваиваем идентификатор
+         bigDiv.appendChild(newImg);//добавляем картинку в большое поле
       }
    } 
    
    function nextImage(event) {
       let bigDiv = document.getElementById("big_picture"), //большой блок
           newImgPrev = document.createElement("img"), //создаем новый тег img
-          imagesArr = ["img/gallery/big/img_1.jpg", "img/gallery/big/img_2.jpg", "img/gallery/big/img_3.jpg"];//массив картинок
+          imagesArr = ["img/gallery/big/img_1.jpg", "img/gallery/big/img_2.jpg", "img/gallery/big/img_3.jpg"];//массив адресов картинок
           
-
+      //проверю на наличе дчерних элементов
       if(bigDiv.hasChildNodes()) {
-         let imgDiv = document.getElementById("big_img");
+         let imgDiv = document.getElementById("big_img");//берем картинку и ищем ее адрес в массиве адресов
          for(let i = 0; i < imagesArr.length; i++){
             let puthImg = imgDiv.src;
             if(puthImg.indexOf(imagesArr[i])>0) {
+               //если нашли нужный адрес, то проверяем есть ли следующий, если нет, то берем первую картинку (циклим переключние)
                if((i+1)==(imagesArr.length))
                   newImgPrev.src = imagesArr[0];
                else
                   newImgPrev.src = imagesArr[i+1];
-               newImgPrev.id = "big_img";
+               newImgPrev.id = "big_img";//присваиваем идентификатор
                bigDiv.innerHTML = ""; //Очиста блока
-               bigDiv.appendChild(newImgPrev);//все ок
+               bigDiv.appendChild(newImgPrev);//добавляем картинку в большое поле
                break;
             }
          }
@@ -135,8 +137,8 @@ window.onload = function () {
       else {
          let newImg = document.createElement("img"); //создаем новый тег img
          newImg.src = imagesArr[0];//устанавливаем 1 картинку
-         newImg.id = "big_img";
-         bigDiv.appendChild(newImg);//все ок
+         newImg.id = "big_img";//присваиваем идентификатор
+         bigDiv.appendChild(newImg);//добавляем картинку в большое поле
       }
    }
    
