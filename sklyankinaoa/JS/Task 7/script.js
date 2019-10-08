@@ -10,6 +10,27 @@ window.onload = function () {
    
    /*4.* Добавить в галерею функцию перехода к следующему изображению. По сторонам от большой картинки должны быть стрелки “вперед” и “назад”, 
       по нажатию на которые происходит замена изображения на следующее или предыдущее.*/
+   function changePict(event) {
+      let bigDiv = document.getElementById("big_picture"), //большой блок
+          smallSrc = event.currentTarget.getAttribute("src"),//находим src
+          newImg = document.createElement("img"); //создаем новый тег img
+      
+      bigDiv.innerHTML = ""; //Очиста блока
+      newImg.src = smallSrc.replace("small","big");//меняем small на big
+      newImg.id = "big_img";
+      
+      newImg.onload = function(){
+         bigDiv.appendChild(newImg);//все ок
+      }
+      newImg.onerror = function(){
+         bigDiv.innerHTML = "Не удалось загрузить картинку";//не нашли картинку
+      }
+   }
+   
+   let images = document.getElementsByClassName("image");
+   for(let i = 0; i < images.length; i++){
+      images[i].onclick = changePict;
+   }
    
    function preView(bigDiv, action) {
       let newImg = document.createElement("img"); //создаем новый тег img
