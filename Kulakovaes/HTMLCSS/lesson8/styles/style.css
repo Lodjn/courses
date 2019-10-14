@@ -1,0 +1,562 @@
+@font-face {
+  font-family: "My AmadeusAP";
+  src: url("../fonts/WCManoNegraBta.otf");
+}
+@font-face {
+  font-family: "RalewayHeavy";
+  src: url("../fonts/RalewayHeavy.otf");
+}
+@font-face {
+  font-family: "RalewayBold";
+  src: url("../fonts/RalewayBold.ttf");
+}
+@font-face {
+  font-family: "RalewayExtraBold";
+  src: url("../fonts/RalewayExtraBold.ttf");
+}
+@font-face {
+  font-family: "RalewayRegular";
+  src: url("../fonts/RalewayRegular.ttf");
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: url("../fonts/RobotoBold.ttf");
+}
+@font-face {
+  font-family: "RobotoBlack";
+  src: url("../fonts/RobotoBlack.ttf");
+}
+@font-face {
+  font-family: "RobotoBlackItalic";
+  src: url("../fonts/RobotoBlackItalic.ttf");
+}
+@font-face {
+  font-family: "RobotoRegular";
+  src: url("../fonts/RobotoRegular.ttf");
+}
+@font-face {
+  font-family: "My AmadeusAP";
+  src: url("../fonts/WCManoNegraBta.otf");
+}
+body {
+  margin: 0;
+  background: #eef8f3;
+}
+.container {
+  padding: 0;
+}
+.header {
+  height: 700px;
+  background: url('../images/header.png');
+}
+.logo {
+  display: block;
+  width: 125px;
+  height: 111px;
+  margin: 24px auto;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 200px 0px;
+  border: 4px solid #eaeaea;
+}
+.icon_logo {
+  list-style-type: none;
+  width: 153px;
+  margin: 48px auto;
+  padding-inline-start: 27px;
+}
+.icon_logo li {
+  display: inline-block;
+  width: 22px;
+}
+.icon_logo a {
+  text-decoration: none;
+  color: inherit;
+}
+.icon_logo i {
+  color: #f8f8f8;
+}
+.welcom {
+  height: 300px;
+  background: #fff51f;
+  padding: 0px 22px;
+  margin-top: 177px;
+}
+.welcom_text1 {
+  height: 139px;
+  font-size: 30px;
+  font-family: "RalewayBold", serif;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  display: table-cell;
+  line-height: 31px;
+}
+.welcom_text2 {
+  font-size: 18px;
+  font-family: "RalewayBold", serif;
+  font-style: italic;
+  padding-top: 20px;
+  line-height: 14px;
+}
+.slide {
+  width: 316px;
+  height: 180px;
+  margin: 83px auto;
+}
+.slide_text1 {
+  color: #fff51f;
+  font-size: 48px;
+  font-family: "RalewayExtraBold", serif;
+  line-height: 0.8;
+}
+.slide_text2 {
+  color: #fff51f;
+  font-size: 18px;
+  font-family: "RalewayRegular", serif;
+  line-height: 1.3;
+}
+.slide_button {
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: "RalewayHeavy", serif;
+  width: 124px;
+  height: 49px;
+  padding-top: 15px;
+  margin-top: 64px;
+  text-align: center;
+  background: #fff51f;
+  color: #000000;
+}
+.body {
+  height: calc(100% - 551px);
+  background: #c8eeee;
+}
+.menu {
+  background: #f443369e;
+  margin: -19px 0 0 0;
+  padding: 0;
+}
+.menu li {
+  list-style-type: none;
+  text-transform: uppercase;
+  font-family: "RobotoBlack", serif;
+  font-size: 14px;
+}
+.menu li:first-child {
+  background: #000000;
+  font-family: "RobotoBold", serif;
+  color: #ffffff;
+  padding: 30px 43px 19px;
+}
+.menu li a {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+  padding: 10px 40px;
+}
+.menu li a:hover {
+  background: #000000;
+  color: #ffffff;
+}
+.open {
+  background: url('../images/open.jpg');
+  height: 300px;
+  margin-top: 32px;
+}
+.open_text {
+  float: right;
+  font-size: 36px;
+  font-family: "RalewayHeavy", serif;
+  font-style: italic;
+  text-transform: uppercase;
+  width: 130px;
+  margin-top: 126px;
+  line-height: 35px;
+}
+.product {
+  background: #c8eeee;
+  margin-top: -19px;
+  margin-bottom: 35px;
+}
+.product_last {
+  margin-bottom: 6px;
+}
+.product_header {
+  font-size: 22px;
+  font-family: "RobotoBlackItalic", serif;
+  text-transform: uppercase;
+  color: #707070;
+  padding: 24px 25px;
+}
+.product_item {
+  background: #ffffff;
+  margin-bottom: 30px;
+  height: 320px;
+  padding: 10px;
+  position: relative;
+}
+.product_item div {
+  width: 46px;
+  height: 46px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.product_item a {
+  display: block;
+  text-decoration: none;
+  font-family: "RobotoBlackItalic", serif;
+  color: #333333;
+}
+.hot {
+  background: url('../images/hot.png');
+}
+.new {
+  background: url('../images/new.png');
+}
+.product_photo {
+  box-sizing: border-box;
+  width: 100%;
+  height: 230px;
+}
+.product_information_main {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+.product_name {
+  font-size: 14px;
+  padding-left: 4px;
+  padding-top: 20px;
+}
+.product_cost_new {
+  font-size: 18px;
+  text-align: right;
+  padding-right: 4px;
+  padding-top: 20px;
+}
+.product_cost_old {
+  font-size: 14px;
+  color: #e24602;
+  text-decoration: line-through;
+  text-align: right;
+  display: none;
+}
+.brand {
+  clear: both;
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  height: 160px;
+}
+.brand_item {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.brand_item_s {
+  text-align: center;
+  height: 100%;
+  padding-top: 35px;
+}
+.brand_item_s a {
+  display: block;
+  color: #ffffff;
+  font-size: 60px;
+  height: 100%;
+}
+.brand_item_s img {
+  width: 100%;
+  height: 100%;
+}
+.brand_item_1 {
+  background: url('../images/social1.jpg');
+}
+.brand_item_2 {
+  background: url('../images/social2.jpg');
+}
+.brand_item_3 {
+  background: url('../images/social3.jpg');
+}
+.instagram_text {
+  background: #eaeaea;
+  height: 105px;
+  font-family: "RobotoBlackItalic", serif;
+  color: #333333;
+  font-size: 22px;
+  padding-left: 449px;
+  padding-top: 50px;
+  box-sizing: border-box;
+}
+.instagram_text a {
+  text-decoration: none;
+  color: inherit;
+}
+.instagram_text i {
+  font-size: 32px;
+}
+.instagram_text span {
+  font-size: 18px;
+}
+.instagram_img {
+  background: #eaeaea;
+}
+.instagram_line {
+  background: #eaeaea;
+  height: 60px;
+}
+.social {
+  height: 152px;
+}
+.pad-0 {
+  padding: 0;
+}
+.mar-0 {
+  margin: 0;
+}
+.footer {
+  height: 301px;
+  background: #afafaf;
+}
+.col_title {
+  font-family: "RalewayExtraBold", serif;
+  font-size: 18px;
+  color: #ffffff;
+  margin-top: 70px;
+  margin-bottom: 25px;
+}
+.col_body {
+  display: block;
+  text-decoration: none;
+  font-family: "RobotoRegular", serif;
+  font-size: 12px;
+  color: #ffffff;
+  line-height: 18px;
+}
+.text_footer {
+  font-family: "RobotoRegular", serif;
+  font-size: 12px;
+  color: #ffffff;
+  line-height: 12px;
+  margin-top: -20px;
+  margin-left: -1px;
+  margin-bottom: 13px;
+}
+.phone_footer {
+  font-family: "RobotoRegular", serif;
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 9px;
+}
+.phone_footer span {
+  color: #faef03;
+}
+.input_footer {
+  width: 180px;
+  height: 30px;
+  background-color: #fff51f;
+  text-transform: uppercase;
+  font-family: "RobotoBold", serif;
+  font-size: 12px;
+  color: #333333;
+  padding-left: 20px;
+  border: 0;
+  box-sizing: border-box;
+  margin-top: 6px;
+}
+.button_footer {
+  width: 70px;
+  height: 30px;
+  margin-left: -5px;
+  background-color: #000000;
+  text-transform: uppercase;
+  font-family: "RobotoRegular", serif;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  border: 0;
+}
+.paycard_img {
+  display: flex;
+  justify-content: space-between;
+  width: 267px;
+  height: 22px;
+  margin-top: 45px;
+  margin-left: -10px;
+}
+.footer_dop {
+  width: 100%;
+  height: 50px;
+  background: #9a9a9a;
+}
+.footer_dop a {
+  text-decoration: none;
+  color: inherit;
+}
+.footer_dop ul {
+  list-style-type: none;
+  float: right;
+  margin-right: 11px;
+  margin-top: 15px;
+}
+.footer_dop ul li {
+  display: inline-block;
+  width: 24px;
+}
+.footer_dop i {
+  color: #ffffff;
+}
+.copyright {
+  float: left;
+  font-family: "RobotoRegular", serif;
+  font-size: 12px;
+  color: #dad9d9;
+  padding-left: 25px;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+/* Страница продукта */
+.row {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.header_bt {
+  height: 115px;
+  background: url('../images/header.png');
+}
+.header_bt ul {
+  list-style-type: none;
+  float: right;
+}
+.header_bt ul li {
+  display: inline-block;
+  width: 120px;
+}
+.header_bt a {
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 22px;
+  color: #651906;
+  font-style: italic;
+}
+.header_bt a:hover {
+  color: #c8eeee;
+}
+.header_bt img {
+  width: 150px;
+  height: 100px;
+  border-radius: 200px 0px;
+  border: 4px solid #eaeaea;
+  margin: 0px 0px 10px 10px;
+}
+.header_bt_name {
+  background: url('../images/header.png');
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.header_bt_name h2 {
+  background: #eaeaea;
+  margin-top: 0px;
+}
+.body_bt {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.photo_product {
+  border: 10px solid #c8a18f;
+  box-sizing: border-box;
+  width: 100%;
+}
+.photo_product:hover {
+  border-color: transparent;
+  box-sizing: border-box;
+  width: 100%;
+}
+.header_prod {
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+  background: #eaeaea;
+}
+.short_explain {
+  color: #707070;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 16px;
+}
+.short_explain:first-letter {
+  color: #8786ff;
+  font-size: 30px;
+  font-family: "My AmadeusAP", serif;
+}
+.big_explain {
+  color: #484343;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+}
+.big_explain:first-letter {
+  color: #8786ff;
+  font-size: 30px;
+  font-family: "My AmadeusAP", serif;
+}
+.mark_main {
+  color: #484343;
+  font-size: 16px;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.mark_main td {
+  border: 3px solid #eaeaea;
+}
+.td_first {
+  text-decoration: underline;
+  vertical-align: top;
+}
+.buy {
+  display: block;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 22px;
+  color: #651906;
+  font-style: italic;
+  float: right;
+  width: 100px;
+  height: 50px;
+  padding-top: 10px;
+  text-align: center;
+  background: #de8178;
+}
+.buy:hover {
+  text-decoration: none;
+  background: #ded3b6;
+}
+.buy:active {
+  text-decoration: none;
+  background: #c2deb4;
+}
+.buy:focus {
+  text-decoration: none;
+}
+.epigraf {
+  color: #707070;
+  font-family: "My AmadeusAP", serif;
+  font-size: 20px;
+}
+.footer_bt {
+  height: 40px;
+  background: #eaeaea;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.footer_bt div {
+  float: right;
+  margin: 10px 10px 0px 0px;
+  font-style: italic;
+  font-weight: 900;
+}
